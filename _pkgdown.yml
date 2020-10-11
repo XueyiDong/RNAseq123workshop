@@ -1,4 +1,4 @@
-url: https://seandavi.github.io/sars2pack
+url: https://xueyidong.github.io/RNAseq123CN/
 
 template:
   params:
@@ -6,13 +6,13 @@ template:
     ganalytics: UA-93043521-1
 
 home:
-  title: "BuildABiocWorkshop2020"
+  title: "使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌"
   type: inverse
 
 
 navbar:
   right:
    - icon: fa-github
-     href: https://github.com/seandavi/BuildABiocWorkshop2020
+     href: https://github.com/XueyiDong/RNAseq123CN
      
 

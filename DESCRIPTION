@@ -1,28 +1,23 @@
-Package: BuildABiocWorkshop2020
-Title: Bioconductor Workshop Template and Github Actions
+Package: RNAseq123CN
+Title: 使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌
 Version: 0.1.1
-Authors@R: 
-    person(given = "Sean",
-           family = "Davis",
-           role = c("aut", "cre"),
-           email = "seandavi@gmail.com",
-           comment = c(ORCID = "your-orc-id-here"))
-Description: This package serves as a template for using github actions to 
-    prepare a Bioconductor Workshop package for use. In particular,
-    a pkgdown website and docker image are generated based on workflow 
-    settings. 
+Authors@R: c(person(role="aut", "Charity", "Law", email = "law@wehi.edu.au"), 
+                      person(role="aut", "Monther", "Alhamdoosh", email = "monther.alhamdoosh@csl.com.au"),
+                      person(role="aut", "Shian", "Su", email = "su.s@wehi.edu.au"),
+                      person(role="aut", "Xueyi", "Dong", email = "dong.x@wehi.edu.au"),
+                      person(role="aut", "Luyi", "Tian", email = "tian.l@wehi.edu.au"),
+                      person(role="aut", "Gordon", "Smyth", email = "smyth@wehi.edu.au"),
+                      person(role=c("aut", "cre"), "Matthew", "Ritchie", email = "mritchie@wehi.edu.au"))
+Description: R package that supports the BioCAsia 2020 workshop based on the F1000Research workflow article on RNA-seq analysis using limma, Glimma and edgeR by Law et al. (2016).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
-Depends: 
-    Biobase
-Suggests: 
-    knitr,
-    rmarkdown,
-    pkgdown
-URL: https://seandavi.github.io/BuildABiocWorkshop2020/
-BugReports: https://github.com/seandavi/BuildABiocWorkshop2020/issues/new/choose
+Depends: R (>= 3.3.0), Glimma (>= 1.1.9), limma, edgeR, gplots,
+        RColorBrewer, Mus.musculus, R.utils
+Suggests: knitr, rmarkdown, BiocStyle
+URL: https://xueyidong.github.io/RNAseq123CN/
+BugReports: https://github.com/XueyiDong/RNAseq123CN/issues/new/choose
 VignetteBuilder: knitr
-DockerImage: seandavi/buildabiocworkshop2020:latest
+DockerImage: xueyidong/rnaseq123cn:latest
