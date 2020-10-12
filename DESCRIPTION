@@ -1,6 +1,6 @@
 Package: RNAseq123CN
 Title: 使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌
-Version: 0.1.1
+Version: 1.12.0
 Authors@R: c(person(role="aut", "Charity", "Law", email = "law@wehi.edu.au"), 
                       person(role="aut", "Monther", "Alhamdoosh", email = "monther.alhamdoosh@csl.com.au"),
                       person(role="aut", "Shian", "Su", email = "su.s@wehi.edu.au"),
@@ -15,7 +15,7 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 Depends: R (>= 3.3.0), Glimma (>= 1.1.9), limma, edgeR, gplots,
-        RColorBrewer, Mus.musculus, R.utils
+        RColorBrewer, Mus.musculus, R.utils, RNAseq123
 Suggests: knitr, rmarkdown, BiocStyle
 URL: https://xueyidong.github.io/RNAseq123CN/
 BugReports: https://github.com/XueyiDong/RNAseq123CN/issues/new/choose
