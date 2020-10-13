@@ -87,15 +87,16 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="使用limmaglimma和edgerrna-seq数据分析易如反掌" class="section level1">
+<div id="bioc-asia-2020-workshop-使用limmaglimma和edgerrna-seq数据分析易如反掌" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#%E4%BD%BF%E7%94%A8limmaglimma%E5%92%8Cedgerrna-seq%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%98%93%E5%A6%82%E5%8F%8D%E6%8E%8C" class="anchor"></a>使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌</h1></div>
+<a href="#bioc-asia-2020-workshop-%E4%BD%BF%E7%94%A8limmaglimma%E5%92%8Cedgerrna-seq%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%98%93%E5%A6%82%E5%8F%8D%E6%8E%8C" class="anchor"></a>BioC Asia 2020 workshop: 使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌</h1></div>
 <p><img src="https://github.com/XueyiDong/RNAseq123CN/workflows/.github/workflows/basic_checks.yaml/badge.svg" alt=".github/workflows/basic_checks.yaml"></p>
 <div id="课程简介" class="section level2">
 <h2 class="hasAnchor">
 <a href="#%E8%AF%BE%E7%A8%8B%E7%AE%80%E4%BB%8B" class="anchor"></a>课程简介</h2>
+<p><img src="articles/stickers.png"></p>
 <p>简单且高效地分析RNA测序数据的能力正是Bioconductor的核心优势之一。在获得RNA-seq基因表达矩阵后，通常需要对数据进行预处理、探索性数据分析、差异表达检验以及通路分析，以得到可以帮助进一步实验和验证研究的结果。</p>
-<p>在本次workshop中，我们将通过分析来自小鼠乳腺的RNA测序数据，演示如何使用流行的edgeR包载入、整理、过滤和归一化数据，然后用limma包的voom方法、线性模型和经验贝叶斯调节来评估差异表达并进行基因集检验。通过Glimma包，本流程进一步实现了结果的互动探索，便于用户查看特定样本与基因的分析结果。</p>
+<p>在本次workshop中，我们将通过分析来自小鼠乳腺的RNA测序数据，演示如何使用流行的<strong>edgeR</strong>包载入、整理、过滤和归一化数据，然后用<strong>limma</strong>包的<em>voom</em>方法、线性模型和经验贝叶斯调节来评估差异表达并进行基因集检验。通过<strong>Glimma</strong>包，本流程进一步实现了结果的互动探索，便于用户查看特定样本与基因的分析结果。</p>
 <p>通过使用这三个Bioconductor包，研究者可以轻松地运行完整的RNA-seq数据分析流程，从原始计数（raw counts）中挖掘出其中蕴含的生物学意义。</p>
 <div id="课前准备" class="section level3">
 <h3 class="hasAnchor">
@@ -105,23 +106,32 @@
 <li>大致了解RNA-seq的原理与目的</li>
 </ul>
 </div>
+<div id="课程大纲" class="section level3">
+<h3 class="hasAnchor">
+<a href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2" class="anchor"></a>课程大纲</h3>
+<ul>
+<li>基础背景知识介绍</li>
+<li>RNA-seq数据分析讲解与演示</li>
+<li>互动答疑环节</li>
+</ul>
 </div>
-<div id="软件安装" class="section level2">
+</div>
+<div id="软件安装与运行" class="section level2">
 <h2 class="hasAnchor">
-<a href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85" class="anchor"></a>软件安装</h2>
-<p>本次workshop所用的资料来自Bioconductor包<a href="https://bioconductor.org/packages/release/workflows/html/RNAseq123.html">RNAseq123</a>。如果你的电脑上已经装有R（版本需要在3.3.0或以上）与RStudio，可以使用以下命令在R中下载并安装此包，即可同时安装整个流程中所需要用到的所有R包：</p>
+<a href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E8%BF%90%E8%A1%8C" class="anchor"></a>软件安装与运行</h2>
+<p>本次workshop所用的资料来自Bioconductor包<a href="https://bioconductor.org/packages/release/workflows/html/RNAseq123.html">RNAseq123</a>。如果你的电脑上已经装有R（版本需要在3.5.1或以上）与RStudio，并已安装Bioconductor项目3.8或以上版本，则可以使用以下命令在R中下载并安装此包，即可同时安装整个流程中所需要用到的所有R包：</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
     <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
 
 <span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="st">"RNAseq123"</span><span class="op">)</span></pre></div>
-<p>此外，我们也为本次workflow准备了Docker镜像，其中包含R、RStudio与需要用到的所有R包。可以用以下方式来使用Docker容器：</p>
+<p>此外，我们也为本次workshop准备了Docker镜像，其中包含R、RStudio与需要用到的所有R包。可以通过以下方式来使用此Docker容器：</p>
 <ul>
-<li>首先运行以下命令：</li>
+<li>首先运行以下命令下载并运行Docker镜像：</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">docker</span> run -e PASSWORD=<span class="op">&lt;</span>choose_a_password_for_rstudio<span class="op">&gt;</span> -p 8787:8787 xueyidong/RNAseq123CN</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">docker</span> run -e PASSWORD=自己随便想一个密码 -p 8787:8787 xueyidong/RNAseq123CN</span></code></pre></div>
 <ul>
-<li>然后在浏览器里访问https://localhost:8787/ 登陆RStudio，用户名 <code>rstudio</code>，密码<code>yourchosenpassword</code>.</li>
+<li>然后在浏览器里访问https://localhost:8787/ 登陆RStudio，用户名 <code>rstudio</code>，密码为上一步里设置的密码。如果你使用的是Windows操作系统，你需要提供本地主机的ip地址，例如<code>http://191.163.92.108:8787/</code>，可以在Docker终端中用<code>docker-machine ip default</code>命令查询。</li>
 </ul>
 </div>
 </div>
@@ -141,7 +151,7 @@
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://www.r-project.org/Licenses/Artistic-2.0">Artistic-2.0</a></small></li>
 </ul>
 </div>
 <div class="developers">
