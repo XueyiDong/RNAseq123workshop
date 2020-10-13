@@ -1,53 +1,34 @@
-# BuildABiocWorkshop2020
+# 使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌
 
-This package is a template for building a Bioconductor 2020 workshop. The package
-includes Github actions to:
+##课程简介
 
-1. Set up bioconductor/bioconductor_docker:devel on Github resources
-2. Install package dependencies for your package (based on the `DESCRIPTION` file)
-3. Run `rcmdcheck::rcmdcheck`
-4. Build a pkgdown website and push it to github pages
-5. Build a docker image with the installed package and dependencies
+简单且高效地分析RNA测序数据的能力正是Bioconductor的核心优势之一。在获得RNA-seq基因表达矩阵后，通常需要对数据进行预处理、探索性数据分析、差异表达检验以及通路分析，以得到可以帮助进一步实验和验证研究的结果。
 
-## Responsibilities
+ 在本次workshop中，我们将通过分析来自小鼠乳腺的RNA测序数据，演示如何使用流行的edgeR包载入、整理、过滤和归一化数据，然后用limma包的voom方法、线性模型和经验贝叶斯调节来评估差异表达并进行基因集检验。通过Glimma包，本流程进一步实现了结果的互动探索，便于用户查看特定样本与基因的分析结果。
 
-This year, package authors will be primarily responsible for:
+通过使用这三个Bioconductor包，研究者可以轻松地运行完整的RNA-seq数据分析流程，从原始计数（raw counts）中挖掘出其中蕴含的生物学意义。
 
-1. Creating a landing site of their choosing for their workshops (a website). This website should be listed in the `DESCRIPTION` file as the `URL`.
-2. Creating a docker account and image that will contain workshop materials and the installed packages necessary to run those materials. The name of the resulting docker image, including "tag" if desired, should be listed in a non-standard tag, `DockerImage:` in the `DESCRIPTION` file. 
+### 课前准备
 
-Both of those tasks can be accomplished using the Github actions included in this template package. The vignette accompanying this package describes how to accomplish both of these tasks.
+* 了解R语言的语法基础
+* 大致了解RNA-seq的原理与目的
 
-## Details
+## 软件安装
 
-For detailed instructions, see the `How to build a workshop` article/vignette.
+本次workshop所用的资料来自Bioconductor包[RNAseq123](https://bioconductor.org/packages/release/workflows/html/RNAseq123.html)。如果你的电脑上已经装有R（版本需要在3.3.0或以上）与RStudio，可以使用以下命令在R中下载并安装此包，即可同时安装整个流程中所需要用到的所有R包：
 
-## Results of successful deployment
+```R
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
 
-- A working docker image that contains the installed package and dependencies.
-- An up-to-date `pkgdown` website at https://YOURUSERNAME.github.io/YOURREPOSITORYNAME/
-- Docker image will be tagged with `latest`, `sha-XXXXXX` where `XXXXXX` is the hash of the current `master` commit, and `master`. 
-
-## To use the resulting image:
-
-```sh
-docker run -e PASSWORD=<choose_a_password_for_rstudio> -p 8787:8787 YOURDOCKERIMAGENAME
-```
-Once running, navigate to https://localhost:8787/ and then login with `rstudio`:`yourchosenpassword`. 
-
-To try with **this** repository docker image:
-
-```sh
-docker run -e PASSWORD=abc -p 8787:8787 seandavi/buildabiocworkshop2020
+BiocManager::install("RNAseq123")
 ```
 
-*NOTE*: Running docker that uses the password in plain text like above exposes the password to others 
-in a multi-user system (like a shared workstation or compute node). In practice, consider using an environment 
-variable instead of plain text to pass along passwords and other secrets in docker command lines. 
+此外，我们也为本次workflow准备了Docker镜像，其中包含R、RStudio与需要用到的所有R包。可以用以下方式来使用Docker容器：
 
+* 首先运行以下命令：
 
-## Whatcha get
-
-https://seandavi.github.io/BuildABiocWorkshop2020
-
-![dockerhub](https://github.com/seandavi/BuildABiocWorkshop2020/raw/master/inst/images/dockerhub_result.png)
+```sh
+docker run -e PASSWORD=<choose_a_password_for_rstudio> -p 8787:8787 xueyidong/RNAseq123CN
+```
+* 然后在浏览器里访问https://localhost:8787/ 登陆RStudio，用户名 `rstudio`，密码`yourchosenpassword`. 
