@@ -1,5 +1,7 @@
 # 使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌
 
+![.github/workflows/basic_checks.yaml](https://github.com/XueyiDong/RNAseq123CN/workflows/.github/workflows/basic_checks.yaml/badge.svg)
+
 ## 课程简介
 
 简单且高效地分析RNA测序数据的能力正是Bioconductor的核心优势之一。在获得RNA-seq基因表达矩阵后，通常需要对数据进行预处理、探索性数据分析、差异表达检验以及通路分析，以得到可以帮助进一步实验和验证研究的结果。
