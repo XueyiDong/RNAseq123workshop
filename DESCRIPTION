@@ -16,7 +16,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 Depends: R (>= 3.3.0), Glimma (>= 1.1.9), limma, edgeR, gplots,
         RColorBrewer, Mus.musculus, R.utils, RNAseq123
-Suggests: knitr, rmarkdown, BiocStyle
+Suggests: knitr, rmarkdown, BiocStyle, pkgdown
 URL: https://xueyidong.github.io/RNAseq123CN/
 BugReports: https://github.com/XueyiDong/RNAseq123CN/issues/new/choose
 VignetteBuilder: knitr
