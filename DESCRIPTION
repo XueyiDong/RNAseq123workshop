@@ -9,7 +9,7 @@ Authors@R: c(person(role="aut", "Charity", "Law", email = "law@wehi.edu.au"),
                       person(role="aut", "Gordon", "Smyth", email = "smyth@wehi.edu.au"),
                       person(role=c("aut", "cre"), "Matthew", "Ritchie", email = "mritchie@wehi.edu.au"))
 Description: R package that supports the BioCAsia 2020 workshop based on the F1000Research workflow article on RNA-seq analysis using limma, Glimma and edgeR by Law et al. (2016).
-License: MIT + file LICENSE
+License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
