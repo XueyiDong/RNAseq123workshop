@@ -2,6 +2,8 @@ on: [push]
 jobs:
   job1:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     container: bioconductor/bioconductor_docker:devel
     steps:
       - uses: actions/checkout@v1
