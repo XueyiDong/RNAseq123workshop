@@ -1,10 +1,10 @@
-Package: RNAseq123CN
-Title: 使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌
-Version: 1.12.0
-Authors@R: c(person(role="aut", "Charity", "Law", email = "law@wehi.edu.au"), 
+Package: RNAseq123workshop
+Title: RNA-seq analysis is easy as 1-2-3 with limma, Glimma and edgeR
+Version: 1.13.0
+Authors@R: c(person(role="aut", "Xueyi", "Dong", email = "dong.x@wehi.edu.au"),
+                      person(role="aut", "Charity", "Law", email = "law@wehi.edu.au"), 
                       person(role="aut", "Monther", "Alhamdoosh", email = "monther.alhamdoosh@csl.com.au"),
                       person(role="aut", "Shian", "Su", email = "su.s@wehi.edu.au"),
-                      person(role="aut", "Xueyi", "Dong", email = "dong.x@wehi.edu.au"),
                       person(role="aut", "Luyi", "Tian", email = "tian.l@wehi.edu.au"),
                       person(role="aut", "Gordon", "Smyth", email = "smyth@wehi.edu.au"),
                       person(role=c("aut", "cre"), "Matthew", "Ritchie", email = "mritchie@wehi.edu.au"))
@@ -17,7 +17,7 @@ RoxygenNote: 7.1.0
 Depends: R (>= 3.3.0), Glimma (>= 1.1.9), limma, edgeR, gplots,
         RColorBrewer, Mus.musculus, R.utils, RNAseq123
 Suggests: knitr, rmarkdown, BiocStyle, pkgdown
-URL: https://xueyidong.github.io/RNAseq123CN/
-BugReports: https://github.com/XueyiDong/RNAseq123CN/issues/new/choose
+URL: https://xueyidong.github.io/RNAseq123workshop/
+BugReports: https://github.com/XueyiDong/RNAseq123workshop/issues/new/choose
 VignetteBuilder: knitr
-DockerImage: xueyidong/rnaseq123cn:latest
+DockerImage: xueyidong/rnaseq123workshop:latest

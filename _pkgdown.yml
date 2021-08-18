@@ -1,4 +1,4 @@
-url: https://xueyidong.github.io/RNAseq123CN/
+url: https://xueyidong.github.io/RNAseq123workshop/
 
 template:
   params:
@@ -6,13 +6,13 @@ template:
     ganalytics: UA-93043521-1
 
 home:
-  title: "使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌"
+  title: "RNA-seq analysis is easy as 1-2-3 with limma, Glimma and edgeR"
   type: inverse
 
 
 navbar:
   right:
    - icon: fa-github
-     href: https://github.com/XueyiDong/RNAseq123CN
+     href: https://github.com/XueyiDong/RNAseq123workshop
      
 
