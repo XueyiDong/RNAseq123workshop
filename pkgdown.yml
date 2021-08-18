@@ -1,11 +1,11 @@
-pandoc: 2.7.3
+pandoc: 2.11.4
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   limmaWorkflow: limmaWorkflow.html
   limmaWorkflow_CN: limmaWorkflow_CN.html
-last_built: 2020-10-14T14:26Z
+last_built: 2021-08-18T16:33Z
 urls:
-  reference: https://xueyidong.github.io/RNAseq123CN//reference
-  article: https://xueyidong.github.io/RNAseq123CN//articles
+  reference: https://xueyidong.github.io/RNAseq123workshop//reference
+  article: https://xueyidong.github.io/RNAseq123workshop//articles
 

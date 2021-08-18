@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RNA-seq analysis is easy as 1-2-3 with limma, Glimma and edgeR • RNAseq123CN</title>
+<title>RNA-seq analysis is easy as 1-2-3 with limma, Glimma and edgeR • RNAseq123workshop</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="RNA-seq analysis is easy as 1-2-3 with limma, Glimma and edgeR">
-<meta property="og:description" content="RNAseq123CN">
+<meta property="og:description" content="RNAseq123workshop">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -36,8 +36,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">RNAseq123CN</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.12.0</span>
+        <a class="navbar-link" href="../index.html">RNAseq123workshop</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.13.0</span>
       </span>
     </div>
 
@@ -45,7 +45,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -70,7 +70,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/XueyiDong/RNAseq123CN">
+  <a href="https://github.com/XueyiDong/RNAseq123workshop">
     <span class="fa fa-github"></span>
      
   </a>
@@ -85,7 +85,7 @@
 
       
 
-      </header><script src="limmaWorkflow_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="limmaWorkflow_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>RNA-seq analysis is easy as 1-2-3 with limma, Glimma and edgeR</h1>
@@ -105,7 +105,7 @@
             <address class="author_afil">
       The Walter and Eliza Hall Institute of Medical Research, 1G Royal Parade, Parkville, VIC 3052, Melbourne, Australia; Department of Medical Biology, The University of Melbourne, Parkville, VIC 3010, Melbourne, Australia; School of Mathematics and Statistics, The University of Melbourne, Parkville, VIC 3010, Melbourne, Australia<br><h4 class="date">17 December 2018</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/XueyiDong/RNAseq123CN/blob/master/vignettes/limmaWorkflow.Rmd"><code>vignettes/limmaWorkflow.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/XueyiDong/RNAseq123workshop/blob/master/vignettes/limmaWorkflow.Rmd"><code>vignettes/limmaWorkflow.Rmd</code></a></small>
       <div class="hidden name"><code>limmaWorkflow.Rmd</code></div>
 
     </address>
@@ -136,11 +136,11 @@
 <div id="set-up" class="section level1">
 <h1 class="hasAnchor">
 <a href="#set-up" class="anchor"></a>Set-up</h1>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioinf.wehi.edu.au/limma">limma</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Shians/Glimma">Glimma</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioinf.wehi.edu.au/limma">limma</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hasaru-k/GlimmaV2">Glimma</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioinf.wehi.edu.au/edgeR">edgeR</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">Mus.musculus</span><span class="op">)</span></pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">Mus.musculus</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="data-packaging" class="section level1">
 <h1 class="hasAnchor">
@@ -149,23 +149,23 @@
 <h2 class="hasAnchor">
 <a href="#reading-in-count-data" class="anchor"></a>Reading in count-data</h2>
 <p>To get started with this analysis, download the file <em>GSE63310_RAW.tar</em> available online from <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file">https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file</a>, and extract the relevant files from this archive. The code below will do this, or you can do this step manually and then move on.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file"</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file"</span>
 <span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="va">url</span>, destfile<span class="op">=</span><span class="st">"GSE63310_RAW.tar"</span>, mode<span class="op">=</span><span class="st">"wb"</span><span class="op">)</span> 
 <span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/untar.html">untar</a></span><span class="op">(</span><span class="st">"GSE63310_RAW.tar"</span>, exdir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span>
 <span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GSM1545535_10_6_5_11.txt"</span>, <span class="st">"GSM1545536_9_6_5_11.txt"</span>, <span class="st">"GSM1545538_purep53.txt"</span>,
   <span class="st">"GSM1545539_JMS8-2.txt"</span>, <span class="st">"GSM1545540_JMS8-3.txt"</span>, <span class="st">"GSM1545541_JMS8-4.txt"</span>,
   <span class="st">"GSM1545542_JMS8-5.txt"</span>, <span class="st">"GSM1545544_JMS9-P7c.txt"</span>, <span class="st">"GSM1545545_JMS9-P8c.txt"</span><span class="op">)</span>
 <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">files</span>, <span class="st">".gz"</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span><span class="op">)</span>
-  <span class="fu">R.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/R.utils/man/compressFile.html">gunzip</a></span><span class="op">(</span><span class="va">i</span>, overwrite<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></pre></div>
+  <span class="fu">R.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/R.utils/man/compressFile.html">gunzip</a></span><span class="op">(</span><span class="va">i</span>, overwrite<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>Each of these text files contains the raw gene-level counts for a given sample. Note that our analysis only includes the basal, LP and ML samples from this experiment (see associated file names below).</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GSM1545535_10_6_5_11.txt"</span>, <span class="st">"GSM1545536_9_6_5_11.txt"</span>, 
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GSM1545535_10_6_5_11.txt"</span>, <span class="st">"GSM1545536_9_6_5_11.txt"</span>, 
    <span class="st">"GSM1545538_purep53.txt"</span>, <span class="st">"GSM1545539_JMS8-2.txt"</span>, 
    <span class="st">"GSM1545540_JMS8-3.txt"</span>, <span class="st">"GSM1545541_JMS8-4.txt"</span>, 
    <span class="st">"GSM1545542_JMS8-5.txt"</span>, <span class="st">"GSM1545544_JMS9-P7c.txt"</span>, 
    <span class="st">"GSM1545545_JMS9-P8c.txt"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.delim</a></span><span class="op">(</span><span class="va">files</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, nrow<span class="op">=</span><span class="fl">5</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.delim</a></span><span class="op">(</span><span class="va">files</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, nrow<span class="op">=</span><span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>##    EntrezID GeneLength Count
 ## 1    497097       3634     1
 ## 2 100503874       3259     0
@@ -173,14 +173,14 @@
 ## 4     19888       9747     0
 ## 5     20671       3130     1</code></pre>
 <p>Whilst each of the nine text files can be read into <strong>R</strong> separately and combined into a matrix of counts, <strong>edgeR</strong> offers a convenient way to do this in one step using the <code>readDGE</code> function. The resulting DGEList-object contains a matrix of counts with 27,179 rows associated with unique Entrez gene identifiers (IDs) and nine columns associated with the individual samples in the experiment.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/readDGE.html">readDGE</a></span><span class="op">(</span><span class="va">files</span>, columns<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/readDGE.html">readDGE</a></span><span class="op">(</span><span class="va">files</span>, columns<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "DGEList"
 ## attr(,"package")
 ## [1] "edgeR"</code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 27179     9</code></pre>
 <p>If the counts from all samples were stored in a single file, the data can be read into <strong>R</strong> and then converted into a DGEList-object using the <code>DGEList</code> function.</p>
 </div>
@@ -189,19 +189,19 @@
 <a href="#organising-sample-information" class="anchor"></a>Organising sample information</h2>
 <p>For downstream analysis, sample-level information related to the experimental design needs to be associated with the columns of the counts matrix. This should include experimental variables, both biological and technical, that could have an effect on expression levels. Examples include cell type (basal, LP and ML in this experiment), genotype (wild-type, knock-out), phenotype (disease status, sex, age), sample treatment (drug, control) and batch information (date experiment was performed if samples were collected and analysed at distinct time points) to name just a few.</p>
 <p>Our DGEList-object contains a <code>samples</code> data frame that stores both cell type (or <code>group</code>) and batch (sequencing <code>lane</code>) information, each of which consists of three distinct levels. Note that within <code>x$samples</code>, library sizes are automatically calculated for each sample and normalisation factors are set to 1. For simplicity, we remove the GEO sample IDs (GSM*) from the column names of our DGEList-object <code>x</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="va">samplenames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substring</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fl">12</span>, <span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="va">samplenames</span></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">samplenames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substring</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fl">12</span>, <span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">samplenames</span></code></pre></div>
 <pre><code>## [1] "10_6_5_11" "9_6_5_11"  "purep53"   "JMS8-2"    "JMS8-3"    "JMS8-4"    "JMS8-5"   
 ## [8] "JMS9-P7c"  "JMS9-P8c"</code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">samplenames</span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">samplenames</span>
 <span class="va">group</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"LP"</span>, <span class="st">"ML"</span>, <span class="st">"Basal"</span>, <span class="st">"Basal"</span>, <span class="st">"ML"</span>, <span class="st">"LP"</span>, 
                      <span class="st">"Basal"</span>, <span class="st">"ML"</span>, <span class="st">"LP"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">group</span> <span class="op">&lt;-</span> <span class="va">group</span>
 <span class="va">lane</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"L004"</span>,<span class="st">"L006"</span>,<span class="st">"L008"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">lane</span> <span class="op">&lt;-</span> <span class="va">lane</span>
-<span class="va">x</span><span class="op">$</span><span class="va">samples</span></pre></div>
+<span class="va">x</span><span class="op">$</span><span class="va">samples</span></code></pre></div>
 <pre><code>##                              files group lib.size norm.factors lane
 ## 10_6_5_11 GSM1545535_10_6_5_11.txt    LP 32863052            1 L004
 ## 9_6_5_11   GSM1545536_9_6_5_11.txt    ML 35335491            1 L004
@@ -219,11 +219,11 @@
 <p>A second data frame named <code>genes</code> in the DGEList-object is used to store gene-level information associated with rows of the counts matrix. This information can be retrieved using organism specific packages such as <strong>Mus.musculus</strong> <span class="citation">(Bioconductor Core Team 2016b)</span> for mouse (or <strong>Homo.sapiens</strong> <span class="citation">(Bioconductor Core Team 2016a)</span> for human) or the <strong>biomaRt</strong> package <span class="citation">(Durinck et al. 2005, 2009)</span> which interfaces the Ensembl genome databases in order to perform gene annotation.</p>
 <p>The type of information that can be retrieved includes gene symbols, gene names, chromosome names and locations, Entrez gene IDs, Refseq gene IDs and Ensembl gene IDs to name just a few. <strong>biomaRt</strong> primarily works off Ensembl gene IDs, whereas <strong>Mus.musculus</strong> packages information from various sources and allows users to choose between many different gene IDs as the key.</p>
 <p>The Entrez gene IDs available in our dataset were annotated using the <strong>Mus.musculus</strong> package to retrieve associated gene symbols and chromosome information.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="va">geneid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">geneid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
 <span class="va">genes</span> <span class="op">&lt;-</span> <span class="fu">select</span><span class="op">(</span><span class="va">Mus.musculus</span>, keys<span class="op">=</span><span class="va">geneid</span>, columns<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SYMBOL"</span>, <span class="st">"TXCHROM"</span><span class="op">)</span>, 
                 keytype<span class="op">=</span><span class="st">"ENTREZID"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">genes</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">genes</span><span class="op">)</span></code></pre></div>
 <pre><code>##    ENTREZID  SYMBOL TXCHROM
 ## 1    497097    Xkr4    chr1
 ## 2 100503874 Gm19938    &lt;NA&gt;
@@ -232,12 +232,12 @@
 ## 5     20671   Sox17    chr1
 ## 6     27395  Mrpl15    chr1</code></pre>
 <p>As with any gene ID, Entrez gene IDs may not map one-to-one to the gene information of interest. It is important to check for duplicated gene IDs and to understand the source of duplication before resolving them. Our gene annotation contains 28 genes that map to multiple chromosomes (e.g. gene Gm1987 is associated with <em>chr4</em> and <em>chr4_JH584294_random</em> and microRNA Mir5098 is associated with <em>chr2</em>, <em>chr5</em>, <em>chr8</em>, <em>chr11</em> and <em>chr17</em>). To resolve duplicate gene IDs one could combine all chromosome information from the multi-mapped genes, such that gene Gm1987 would be is assigned to <em>chr4 and chr4_JH584294_random</em>, or select one of the chromosomes to represent the gene with duplicate annotation. For simplicity we do the latter, keeping only the first occurrence of each gene ID.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit">
-<span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">genes</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/duplicated.html">duplicated</a></span><span class="op">(</span><span class="va">genes</span><span class="op">$</span><span class="va">ENTREZID</span><span class="op">)</span>,<span class="op">]</span></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">genes</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/duplicated.html">duplicated</a></span><span class="op">(</span><span class="va">genes</span><span class="op">$</span><span class="va">ENTREZID</span><span class="op">)</span>,<span class="op">]</span></code></pre></div>
 <p>In this example, the gene order is the same in both the annotation and the data object. If this is not the case due to missing and/or rearranged gene IDs, the <code>match</code> function can be used to order genes correctly. The data frame of gene annotations is then added to the data object and neatly packaged in a DGEList-object containing raw count data with associated sample information and gene annotations.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit">
-<span class="va">x</span><span class="op">$</span><span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">genes</span>
-<span class="va">x</span></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">$</span><span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">genes</span>
+<span class="va">x</span></code></pre></div>
 <pre><code>## An object of class "DGEList"
 ## $samples
 ##                              files group lib.size norm.factors lane
@@ -280,18 +280,18 @@
 <p>For differential expression and related analyses, gene expression is rarely considered at the level of raw counts since libraries sequenced at a greater depth will result in higher counts. Rather, it is common practice to transform raw counts onto a scale that accounts for such library size differences. Popular transformations include counts per million (CPM), log2-counts per million (log-CPM), reads per kilobase of transcript per million (RPKM), and fragments per kilobase of transcript per million (FPKM).</p>
 <p>In our analyses, CPM and log-CPM transformations are used regularly although they do not account for gene length differences as RPKM and FPKM values do. Whilst RPKM and FPKM values can just as well be used, CPM and log-CPM values can be calculated using a counts matrix alone and will suffice for the type of comparisons we are interested in. Assuming that there are no differences in isoform usage between conditions, differential expression analyses look at gene expression changes between conditions rather than comparing expression across multiple genes or drawing conclusions on absolute levels of expression. In other words, gene lengths remain constant for comparisons of interest and any observed differences are a result of changes in condition rather than changes in gene length.</p>
 <p>Here raw counts are converted to CPM and log-CPM values using the <code>cpm</code> function in <strong>edgeR</strong>. RPKM values are just as easily calculated as CPM values using the <code>rpkm</code> function in <strong>edgeR</strong> if gene lengths are available.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit">
-<span class="va">cpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
-<span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>A CPM value of 1 for a gene equates to having 20 counts in the sample with the lowest sequencing depth (JMS0-P8c, library size approx. 20 million) or 76 counts in the sample with the greatest sequencing depth (JMS8-3, library size approx. 76 million).</p>
 <p>The log-CPM values will be used for exploratory plots. When <code>log=TRUE</code>, the <code>cpm</code> function adds an offset to the CPM values before converting to the log2-scale. By default, the offset is 2/<em>L</em> where 2 is the “prior count” and <em>L</em> is the average library size in millions, so the log-CPM values are related to the CPM values by log<sub>2</sub>(CPM + 2/<em>L</em>). This calculation ensures that any two read counts with identical CPM values will also have identical log-CPM values. The prior count avoids taking the logarithm of zero, and also reduces spurious variability for genes with very low counts by shrinking all the inter-sample log-fold-changes towards zero, something that is helpful for exploratory plotting. For this dataset, the average library size is about 45.5 million, so <em>L</em> approx. 45.5 and the minimum log-CPM value for each sample becomes log<sub>2</sub>(2/45.5) = -4.51. In other words, a counr of zero for this data maps to a log-CPM value of -4.51 after adding the prior count or offset:</p>
-<div class="sourceCode" id="cb19"><pre class="downlit">
-<span class="va">L</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">lib.size</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1e-6</span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">L</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">lib.size</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1e-6</span>
 <span class="va">M</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">lib.size</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1e-6</span>
-<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">L</span>, <span class="va">M</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">L</span>, <span class="va">M</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 45.5 51.4</code></pre>
-<div class="sourceCode" id="cb21"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">lcpm</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">lcpm</span><span class="op">)</span></code></pre></div>
 <pre><code>##    10_6_5_11        9_6_5_11        purep53          JMS8-2          JMS8-3     
 ##  Min.   :-4.51   Min.   :-4.51   Min.   :-4.51   Min.   :-4.51   Min.   :-4.51  
 ##  1st Qu.:-4.51   1st Qu.:-4.51   1st Qu.:-4.51   1st Qu.:-4.51   1st Qu.:-4.51  
@@ -312,24 +312,24 @@
 <h2 class="hasAnchor">
 <a href="#removing-genes-that-are-lowly-expressed" class="anchor"></a>Removing genes that are lowly expressed</h2>
 <p>All datasets will include a mix of genes that are expressed and those that are not expressed. Whilst it is of interest to examine genes that are expressed in one condition but not in another, some genes are unexpressed throughout all samples. In fact, 19% of genes in this dataset have zero counts across all nine samples.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">counts</span><span class="op">==</span><span class="fl">0</span><span class="op">)</span><span class="op">==</span><span class="fl">9</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">counts</span><span class="op">==</span><span class="fl">0</span><span class="op">)</span><span class="op">==</span><span class="fl">9</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ## FALSE  TRUE 
 ## 22026  5153</code></pre>
 <p>Plotting the distribution log-CPM values shows that a sizeable proportion of genes within each sample are either unexpressed or lowly-expressed with log-CPM values that are small or negative (Figure 1A).</p>
 <p>Genes that do not have a worthwhile number of reads in any sample should be filtered out of the downstream analyses. There are several reasons for this. From a biological point of view, genes that not expressed at a biologically meaningful level in any condition are not of interest and are therefore best ignored. From a statistical point of view, removing low count genes allows the mean-variance relationship in the data to be estimated with greater reliability and also reduces the number of statistical tests that need to be carried out in downstream analyses looking at differential expression.</p>
 <p>The <code>filterByExpr</code> function in the <strong>edgeR</strong> package provides an automatic way to filter genes, while keeping as many genes as possible with worthwhile counts.</p>
-<div class="sourceCode" id="cb25"><pre class="downlit">
-<span class="va">keep.exprs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/filterByExpr.html">filterByExpr</a></span><span class="op">(</span><span class="va">x</span>, group<span class="op">=</span><span class="va">group</span><span class="op">)</span>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">keep.exprs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/filterByExpr.html">filterByExpr</a></span><span class="op">(</span><span class="va">x</span>, group<span class="op">=</span><span class="va">group</span><span class="op">)</span>
 <span class="va">x</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="va">keep.exprs</span>,, keep.lib.sizes<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 16624     9</code></pre>
 <p>By default, the function keeps genes with about 10 read counts or more in a minimum number of samples, where the number of samples is chosen according to the minimum group sample size. The actual filtering uses CPM values rather than counts in order to avoid giving preference to samples with large library sizes. For this dataset, the median library size is about 51 million and 10/51 approx. 0.2, so the <code>filterByExpr</code> function keeps genes that have a CPM of 0.2 or more in at least three samples. A biologically interesting gene should be expressed in at least three samples because all the cell type groups have three replicates. The cutoffs used depend on the sequencing depth and on the experimental design. If the library sizes had been larger then a lower CPM cutoff would have been chosen, because larger library sizes provide better resolution to explore more genes at lower expression levels. Alternatively, smaller library sizes decrease our ability to explore marginal genes and hence would have led to a higher CPM cutoff.</p>
 <p>Using this criterion, the number of genes is reduced to 16,624, about 60% of the number that we started with (panel B of the next figure). Note that subsetting the entire DGEList-object removes both the counts and the associated gene information for the filtered genes. The filtered DGEList-object keeps the gene information and the counts for the retained genes correctly associated.</p>
 <p>Code to produce the figure is given below.</p>
-<div class="sourceCode" id="cb27"><pre class="downlit">
-<span class="va">lcpm.cutoff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log2</a></span><span class="op">(</span><span class="fl">10</span><span class="op">/</span><span class="va">M</span> <span class="op">+</span> <span class="fl">2</span><span class="op">/</span><span class="va">L</span><span class="op">)</span>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">lcpm.cutoff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log2</a></span><span class="op">(</span><span class="fl">10</span><span class="op">/</span><span class="va">M</span> <span class="op">+</span> <span class="fl">2</span><span class="op">/</span><span class="va">L</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span>
 <span class="va">nsamples</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
 <span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="va">nsamples</span>, <span class="st">"Paired"</span><span class="op">)</span>
@@ -350,7 +350,7 @@
 <span class="va">den</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/density.html">density</a></span><span class="op">(</span><span class="va">lcpm</span><span class="op">[</span>,<span class="va">i</span><span class="op">]</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">den</span><span class="op">$</span><span class="va">x</span>, <span class="va">den</span><span class="op">$</span><span class="va">y</span>, col<span class="op">=</span><span class="va">col</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, lwd<span class="op">=</span><span class="fl">2</span><span class="op">)</span>
 <span class="op">}</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="va">samplenames</span>, text.col<span class="op">=</span><span class="va">col</span>, bty<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="va">samplenames</span>, text.col<span class="op">=</span><span class="va">col</span>, bty<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_files/figure-html/filterplot1-1.png" alt="The density of log-CPM values for raw pre-filtered data (A) and post-filtered data (B) are shown for each sample. Dotted vertical lines mark the log-CPM threshold (equivalent to a CPM value of about 0.2) used in the filtering step." width="768"><p class="caption">
 The density of log-CPM values for raw pre-filtered data (A) and post-filtered data (B) are shown for each sample. Dotted vertical lines mark the log-CPM threshold (equivalent to a CPM value of about 0.2) used in the filtering step.
@@ -363,29 +363,29 @@ The density of log-CPM values for raw pre-filtered data (A) and post-filtered da
 <p>During the sample preparation or sequencing process, external factors that are not of biological interest can affect the expression of individual samples. For example, samples processed in the first batch of an experiment can have higher expression overall when compared to samples processed in a second batch. It is assumed that all samples should have a similar range and distribution of expression values. Normalisation is required to ensure that the expression distributions of each sample are similar across the entire experiment.</p>
 <p>Any plot showing the per sample expression distributions, such as a density or boxplot, is useful in determining whether any samples are dissimilar to others. Distributions of log-CPM values are similar throughout all samples within this dataset (panel B of the figure above).</p>
 <p>Nonetheless, normalisation by the method of trimmed mean of M-values (TMM) <span class="citation">(Robinson and Oshlack 2010)</span> is performed using the <code>calcNormFactors</code> function in <strong>edgeR</strong>. The normalisation factors calculated here are used as a scaling factor for the library sizes. When working with DGEList-objects, these normalisation factors are automatically stored in <code>x$samples$norm.factors</code>. For this dataset the effect of TMM-normalisation is mild, as evident in the magnitude of the scaling factors, which are all relatively close to 1.</p>
-<div class="sourceCode" id="cb28"><pre class="downlit">
-<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html">calcNormFactors</a></span><span class="op">(</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"TMM"</span><span class="op">)</span>
-<span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span></pre></div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html">calcNormFactors</a></span><span class="op">(</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"TMM"</span><span class="op">)</span>
+<span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span></code></pre></div>
 <pre><code>## [1] 0.894 1.025 1.046 1.046 1.016 0.922 0.996 1.086 0.984</code></pre>
 <p>To give a better visual representation of the effects of normalisation, the data was duplicated then adjusted so that the counts of the first sample are reduced to 5% of their original values, and in the second sample they are inflated to be 5-times larger.</p>
-<div class="sourceCode" id="cb30"><pre class="downlit">
-<span class="va">x2</span> <span class="op">&lt;-</span> <span class="va">x</span>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x2</span> <span class="op">&lt;-</span> <span class="va">x</span>
 <span class="va">x2</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span> <span class="op">&lt;-</span> <span class="fl">1</span>
 <span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">ceiling</a></span><span class="op">(</span><span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">*</span><span class="fl">0.05</span><span class="op">)</span>
-<span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">*</span><span class="fl">5</span></pre></div>
+<span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">*</span><span class="fl">5</span></code></pre></div>
 <p>The figure below shows the expression distribution of samples for unnormalised and normalised data, where distributions are noticeably different pre-normalisation and are similar post-normalisation. Here the first sample has a small TMM scaling factor of 0.06, whereas the second sample has a large scaling factor of 6.08 – neither values are close to 1.</p>
-<div class="sourceCode" id="cb31"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x2</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">lcpm</span>, las<span class="op">=</span><span class="fl">2</span>, col<span class="op">=</span><span class="va">col</span>, main<span class="op">=</span><span class="st">""</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"A. Example: Unnormalised data"</span>,ylab<span class="op">=</span><span class="st">"Log-cpm"</span><span class="op">)</span>
 <span class="va">x2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html">calcNormFactors</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span>  
-<span class="va">x2</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span></pre></div>
+<span class="va">x2</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span></code></pre></div>
 <pre><code>## [1] 0.0577 6.0829 1.2202 1.1648 1.1966 1.0466 1.1505 1.2543 1.1090</code></pre>
-<div class="sourceCode" id="cb33"><pre class="downlit">
-<span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x2</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x2</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">lcpm</span>, las<span class="op">=</span><span class="fl">2</span>, col<span class="op">=</span><span class="va">col</span>, main<span class="op">=</span><span class="st">""</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"B. Example: Normalised data"</span>,ylab<span class="op">=</span><span class="st">"Log-cpm"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"B. Example: Normalised data"</span>,ylab<span class="op">=</span><span class="st">"Log-cpm"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_files/figure-html/plotmodifieddata-1.png" alt="Example data: Boxplots of log-CPM values showing expression distributions for unnormalised data (A) and normalised data (B) for each sample in the modified dataset where the counts in samples 1 and 2 have been scaled to 5% and 500% of their original values respectively." width="768"><p class="caption">
 Example data: Boxplots of log-CPM values showing expression distributions for unnormalised data (A) and normalised data (B) for each sample in the modified dataset where the counts in samples 1 and 2 have been scaled to 5% and 500% of their original values respectively.
@@ -401,8 +401,8 @@ Example data: Boxplots of log-CPM values showing expression distributions for un
 <p>Whilst all samples cluster by groups, the largest transcriptional difference is observed between basal and LP, and basal and ML over dimension 1. For this reason, it is expected that pairwise comparisons between cell populations will result in a greater number of DE genes for comparisons involving basal samples, and relatively small numbers of DE genes when comparing ML to LP. Datasets where samples do not cluster by experimental group may show little or no evidence of differential expression in the downstream analysis.</p>
 <p>To create the MDS plots, we assign different colours to the factors of interest. Dimensions 1 and 2 are examined using the color grouping defined by cell types.</p>
 <p>Dimensions 3 and 4 are examined using the colour grouping defined by sequencing lanes (batch).</p>
-<div class="sourceCode" id="cb34"><pre class="downlit">
-<span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="va">col.group</span> <span class="op">&lt;-</span> <span class="va">group</span>
 <span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">col.group</span><span class="op">)</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nlevels.html">nlevels</a></span><span class="op">(</span><span class="va">col.group</span><span class="op">)</span>, <span class="st">"Set1"</span><span class="op">)</span>
@@ -413,16 +413,16 @@ Example data: Boxplots of log-CPM values showing expression distributions for un
 <span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotMDS.html">plotMDS</a></span><span class="op">(</span><span class="va">lcpm</span>, labels<span class="op">=</span><span class="va">group</span>, col<span class="op">=</span><span class="va">col.group</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"A. Sample groups"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotMDS.html">plotMDS</a></span><span class="op">(</span><span class="va">lcpm</span>, labels<span class="op">=</span><span class="va">lane</span>, col<span class="op">=</span><span class="va">col.lane</span>, dim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"B. Sequencing lanes"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"B. Sequencing lanes"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_files/figure-html/MDS1-1.png" alt="MDS plots of log-CPM values over dimensions 1 and 2 with samples coloured and labeled by sample groups (A) and over dimensions 3 and 4 with samples coloured and labeled by sequencing lane (B). Distances on the plot correspond to the leading fold-change, which is the average (root-mean-square) log2-fold-change for the 500 genes most divergent between each pair of samples by default." width="768"><p class="caption">
 MDS plots of log-CPM values over dimensions 1 and 2 with samples coloured and labeled by sample groups (A) and over dimensions 3 and 4 with samples coloured and labeled by sequencing lane (B). Distances on the plot correspond to the leading fold-change, which is the average (root-mean-square) log2-fold-change for the 500 genes most divergent between each pair of samples by default.
 </p>
 </div>
 <p>Alternatively, the <strong>Glimma</strong> package offers the convenience of an interactive MDS plot where multiple dimensions can be explored. The <code>glMDSPlot</code> function generates an html page (that is opened in a browser if <code>launch=TRUE</code>) with an MDS plot in the left panel and a barplot showing the proportion of variation explained by each dimension in the right panel. Clicking on the bars of the bar plot changes the pair of dimensions plotted in the MDS plot, and hovering over the individual points reveals the sample label. The colour scheme can be changed as well to highlight cell population or sequencing lane (batch). An interactive MDS plot of this dataset can be found at <a href="http://bioinf.wehi.edu.au/folders/limmaWorkflow/glimma-plots/MDS-Plot.html">http://bioinf.wehi.edu.au/folders/limmaWorkflow/glimma-plots/MDS-Plot.html</a>.</p>
-<div class="sourceCode" id="cb35"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/Glimma/man/glMDSPlot.html">glMDSPlot</a></span><span class="op">(</span><span class="va">lcpm</span>, labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">group</span>, <span class="va">lane</span>, sep<span class="op">=</span><span class="st">"_"</span><span class="op">)</span>, 
-          groups<span class="op">=</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span>, launch<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/Glimma/man/glMDSPlot.html">glMDSPlot</a></span><span class="op">(</span><span class="va">lcpm</span>, labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">group</span>, <span class="va">lane</span>, sep<span class="op">=</span><span class="st">"_"</span><span class="op">)</span>, 
+          groups<span class="op">=</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span>, launch<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><a href="glimma-plots/MDS-Plot.html">Link to Interactive MDS plot</a></p>
 </div>
 </div>
@@ -433,10 +433,10 @@ MDS plots of log-CPM values over dimensions 1 and 2 with samples coloured and la
 <h2 class="hasAnchor">
 <a href="#creating-a-design-matrix-and-contrasts" class="anchor"></a>Creating a design matrix and contrasts</h2>
 <p>In this study, it is of interest to see which genes are expressed at different levels between the three cell populations profiled. In our analysis, linear models are fitted to the data with the assumption that the underlying data is normally distributed. To get started, a design matrix is set up with both the cell population and sequencing lane (batch) information.</p>
-<div class="sourceCode" id="cb36"><pre class="downlit">
-<span class="va">design</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span><span class="op">(</span><span class="op">~</span><span class="fl">0</span><span class="op">+</span><span class="va">group</span><span class="op">+</span><span class="va">lane</span><span class="op">)</span>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">design</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span><span class="op">(</span><span class="op">~</span><span class="fl">0</span><span class="op">+</span><span class="va">group</span><span class="op">+</span><span class="va">lane</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">design</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">"group"</span>, <span class="st">""</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">design</span><span class="op">)</span><span class="op">)</span>
-<span class="va">design</span></pre></div>
+<span class="va">design</span></code></pre></div>
 <pre><code>##   Basal LP ML laneL006 laneL008
 ## 1     0  1  0        0        0
 ## 2     0  0  1        0        0
@@ -456,13 +456,13 @@ MDS plots of log-CPM values over dimensions 1 and 2 with samples coloured and la
 ## attr(,"contrasts")$lane
 ## [1] "contr.treatment"</code></pre>
 <p>For a given experiment, there are usually several equivalent ways to set up an appropriate design matrix. For example, <code>~0+group+lane</code> removes the intercept from the first factor, <code>group</code>, but an intercept remains in the second factor <code>lane</code>. Alternatively, <code>~group+lane</code> could be used to keep the intercepts in both <code>group</code> and <code>lane</code>. Understanding how to interpret the coefficients estimated in a given model is key here. We choose the first model for our analysis, as setting up model contrasts is more straight forward in the absence of an intercept for <code>group</code>. Contrasts for pairwise comparisons between cell populations are set up in <strong>limma</strong> using the <code>makeContrasts</code> function.</p>
-<div class="sourceCode" id="cb38"><pre class="downlit">
-<span class="va">contr.matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/makeContrasts.html">makeContrasts</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">contr.matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/makeContrasts.html">makeContrasts</a></span><span class="op">(</span>
    BasalvsLP <span class="op">=</span> <span class="va">Basal</span><span class="op">-</span><span class="va">LP</span>, 
    BasalvsML <span class="op">=</span> <span class="va">Basal</span> <span class="op">-</span> <span class="va">ML</span>, 
    LPvsML <span class="op">=</span> <span class="va">LP</span> <span class="op">-</span> <span class="va">ML</span>, 
    levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">design</span><span class="op">)</span><span class="op">)</span>
-<span class="va">contr.matrix</span></pre></div>
+<span class="va">contr.matrix</span></code></pre></div>
 <pre><code>##           Contrasts
 ## Levels     BasalvsLP BasalvsML LPvsML
 ##   Basal            1         1      0
@@ -480,10 +480,10 @@ MDS plots of log-CPM values over dimensions 1 and 2 with samples coloured and la
 <p>The mean-variance relationship of log-CPM values for this dataset is shown in the left-hand panel of the next figure. Typically, the <em>voom-plot</em> shows a decreasing trend between the means and variances resulting from a combination of technical variation in the sequencing experiment and biological variation amongst the replicate samples from different cell populations. Experiments with high biological variation usually result in flatter trends, where variance values plateau at high expression values. Experiments with low biological variation tend to result in sharp decreasing trends.</p>
 <p>Moreover, the voom-plot provides a visual check on the level of filtering performed upstream. If filtering of lowly-expressed genes is insufficient, a drop in variance levels can be observed at the low end of the expression scale due to very small counts. If this is observed, one should return to the earlier filtering step and increase the expression threshold applied to the dataset.</p>
 <p>Where sample-level variation is evident from earlier inspections of the MDS plot, the <code>voomWithQualityWeights</code> function can be used to simultaneously incorporate sample-level weights together with the abundance dependent weights estimated by <code>voom</code> <span class="citation">(Liu et al. 2015)</span>. For an example of this approach, see Liu <em>et al.</em> (2016) <span class="citation">(Liu et al. 2016)</span>.</p>
-<div class="sourceCode" id="cb40"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="va">v</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/voom.html">voom</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">design</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
-<span class="va">v</span></pre></div>
+<span class="va">v</span></code></pre></div>
 <pre><code>## An object of class "EList"
 ## $genes
 ##   ENTREZID SYMBOL TXCHROM
@@ -544,11 +544,11 @@ MDS plots of log-CPM values over dimensions 1 and 2 with samples coloured and la
 ## 
 ## attr(,"contrasts")$lane
 ## [1] "contr.treatment"</code></pre>
-<div class="sourceCode" id="cb42"><pre class="downlit">
-<span class="va">vfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/lmFit.html">lmFit</a></span><span class="op">(</span><span class="va">v</span>, <span class="va">design</span><span class="op">)</span>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">vfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/lmFit.html">lmFit</a></span><span class="op">(</span><span class="va">v</span>, <span class="va">design</span><span class="op">)</span>
 <span class="va">vfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/contrasts.fit.html">contrasts.fit</a></span><span class="op">(</span><span class="va">vfit</span>, contrasts<span class="op">=</span><span class="va">contr.matrix</span><span class="op">)</span>
 <span class="va">efit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/ebayes.html">eBayes</a></span><span class="op">(</span><span class="va">vfit</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotSA.html">plotSA</a></span><span class="op">(</span><span class="va">efit</span>, main<span class="op">=</span><span class="st">"Final model: Mean-variance trend"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotSA.html">plotSA</a></span><span class="op">(</span><span class="va">efit</span>, main<span class="op">=</span><span class="st">"Final model: Mean-variance trend"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_files/figure-html/voom-1.png" alt="Means (x-axis) and variances (y-axis) of each gene are plotted to show the dependence between the two before `voom` is applied to the data (left panel) and how the trend is removed after `voom` precision weights are applied to the data (right panel). The plot on the left is created within the `voom` function which extracts residual variances from fitting linear models to log-CPM transformed data. Variances are then rescaled to quarter-root variances (or square-root of standard deviations) and plotted against the average log2 count for each gene. The plot on the right is created using `plotSA` which plots log2 residual standard deviations against mean log-CPM values. In both plots, each black dot represents a gene. On the left plot, the red curve shows the estimated mean-variance trend used to compute the voom weights. On the right plot, the average log2 residual standard deviation estimated by the empirical Bayes algorithm is marked by a horizontal blue line. " width="768"><p class="caption">
 Means (x-axis) and variances (y-axis) of each gene are plotted to show the dependence between the two before <code>voom</code> is applied to the data (left panel) and how the trend is removed after <code>voom</code> precision weights are applied to the data (right panel). The plot on the left is created within the <code>voom</code> function which extracts residual variances from fitting linear models to log-CPM transformed data. Variances are then rescaled to quarter-root variances (or square-root of standard deviations) and plotted against the average log2 count for each gene. The plot on the right is created using <code>plotSA</code> which plots log2 residual standard deviations against mean log-CPM values. In both plots, each black dot represents a gene. On the left plot, the red curve shows the estimated mean-variance trend used to compute the voom weights. On the right plot, the average log2 residual standard deviation estimated by the empirical Bayes algorithm is marked by a horizontal blue line.
@@ -565,50 +565,50 @@ Means (x-axis) and variances (y-axis) of each gene are plotted to show the depen
 <h2 class="hasAnchor">
 <a href="#examining-the-number-of-de-genes" class="anchor"></a>Examining the number of DE genes</h2>
 <p>For a quick look at differential expression levels, the number of significantly up- and down-regulated genes can be summarised in a table. Significance is defined using an adjusted <em>p</em>-value cutoff that is set at 5% by default. For the comparison between expression levels in basal and LP, 4,648 genes are found to be down-regulated in basal relative to LP and 4,863 genes are up-regulated in basal relative to LP – a total of 9,511 DE genes. A total of 9,598 DE genes are found between basal and ML (4,927 down- and 4,671 up-regulated genes), and a total of 5,652 DE genes are found between LP and ML (3,135 down- and 2,517 up-regulated). The larger numbers of DE genes observed for comparisons involving the basal population are consistent with our observations from the MDS plots.</p>
-<div class="sourceCode" id="cb43"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/limma/man/decideTests.html">decideTests</a></span><span class="op">(</span><span class="va">efit</span><span class="op">)</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/limma/man/decideTests.html">decideTests</a></span><span class="op">(</span><span class="va">efit</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>##        BasalvsLP BasalvsML LPvsML
 ## Down        4648      4927   3135
 ## NotSig      7113      7026  10972
 ## Up          4863      4671   2517</code></pre>
 <p>Some studies require more than an adjusted <em>p</em>-value cut-off. For a stricter definition on significance, one may require log-fold-changes (log-FCs) to be above a minimum value. The <em>treat</em> method <span class="citation">(McCarthy and Smyth 2009)</span> can be used to calculate <em>p</em>-values from empirical Bayes moderated <em>t</em>-statistics with a minimum log-FC requirement. The number of differentially expressed genes are reduced to a total of 3,648 DE genes for basal versus LP, 3,834 DE genes for basal versus ML, and 414 DE genes for LP versus ML when testing requires genes to have a log-FC that is significantly greater than 1 (equivalent to a 2-fold difference between cell types on the original scale).</p>
-<div class="sourceCode" id="cb45"><pre class="downlit">
-<span class="va">tfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/ebayes.html">treat</a></span><span class="op">(</span><span class="va">vfit</span>, lfc<span class="op">=</span><span class="fl">1</span><span class="op">)</span>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">tfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/ebayes.html">treat</a></span><span class="op">(</span><span class="va">vfit</span>, lfc<span class="op">=</span><span class="fl">1</span><span class="op">)</span>
 <span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/decideTests.html">decideTests</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></code></pre></div>
 <pre><code>##        BasalvsLP BasalvsML LPvsML
 ## Down        1632      1777    224
 ## NotSig     12976     12790  16210
 ## Up          2016      2057    190</code></pre>
 <p>Genes that are DE in multiple comparisons can be extracted using the results from <code>decideTests</code>, where 0s represent genes that are not DE, 1s represent genes that are up-regulated, and -1s represent genes that are down-regulated. A total of 2,784 genes are DE in both basal versus LP and basal versus ML, twenty of which are listed below. The <code>write.fit</code> function can be used to extract and write results for all three comparisons to a single output file.</p>
-<div class="sourceCode" id="cb47"><pre class="downlit">
-<span class="va">de.common</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">!=</span><span class="fl">0</span> <span class="op">&amp;</span> <span class="va">dt</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">!=</span><span class="fl">0</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">de.common</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">de.common</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">!=</span><span class="fl">0</span> <span class="op">&amp;</span> <span class="va">dt</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">!=</span><span class="fl">0</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">de.common</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 2784</code></pre>
-<div class="sourceCode" id="cb49"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">$</span><span class="va">genes</span><span class="op">$</span><span class="va">SYMBOL</span><span class="op">[</span><span class="va">de.common</span><span class="op">]</span>, n<span class="op">=</span><span class="fl">20</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">$</span><span class="va">genes</span><span class="op">$</span><span class="va">SYMBOL</span><span class="op">[</span><span class="va">de.common</span><span class="op">]</span>, n<span class="op">=</span><span class="fl">20</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] "Xkr4"          "Rgs20"         "Cpa6"          "A830018L16Rik" "Sulf1"        
 ##  [6] "Eya1"          "Msc"           "Sbspon"        "Pi15"          "Crispld1"     
 ## [11] "Kcnq5"         "Rims1"         "Khdrbs2"       "Ptpn18"        "Prss39"       
-## [16] "Arhgef4"       "Cnga3"         "2010300C02Rik" "Aff3"          "Npas2"</code></pre>
-<div class="sourceCode" id="cb51"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/venn.html">vennDiagram</a></span><span class="op">(</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>, circle.col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"turquoise"</span>, <span class="st">"salmon"</span><span class="op">)</span><span class="op">)</span></pre></div>
+## [16] "Arhgef4"       "Cnga3"         "Cracdl"        "Aff3"          "Npas2"</code></pre>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/limma/man/venn.html">vennDiagram</a></span><span class="op">(</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>, circle.col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"turquoise"</span>, <span class="st">"salmon"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_files/figure-html/venn-1.png" alt="Venn diagram showing the number of genes DE in the comparison between basal versus LP only (left), basal versus ML only (right), and the number of genes that are DE in both comparisons (center). The number of genes that are not DE in either comparison are marked in the bottom-right." width="576"><p class="caption">
 Venn diagram showing the number of genes DE in the comparison between basal versus LP only (left), basal versus ML only (right), and the number of genes that are DE in both comparisons (center). The number of genes that are not DE in either comparison are marked in the bottom-right.
 </p>
 </div>
-<div class="sourceCode" id="cb52"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/writefit.html">write.fit</a></span><span class="op">(</span><span class="va">tfit</span>, <span class="va">dt</span>, file<span class="op">=</span><span class="st">"results.txt"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/limma/man/writefit.html">write.fit</a></span><span class="op">(</span><span class="va">tfit</span>, <span class="va">dt</span>, file<span class="op">=</span><span class="st">"results.txt"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="examining-individual-de-genes-from-top-to-bottom" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examining-individual-de-genes-from-top-to-bottom" class="anchor"></a>Examining individual DE genes from top to bottom</h2>
 <p>The top DE genes can be listed using <code>topTreat</code> for results using <code>treat</code> (or <code>topTable</code> for results using <code>eBayes</code>). By default <code>topTreat</code> arranges genes from smallest to largest adjusted <em>p</em>-value with associated gene information, log-FC, average log-CPM, moderated <em>t</em>-statistic, raw and adjusted <em>p</em>-value for each gene. The number of top genes displayed can be specified, where <code>n=Inf</code> includes all genes. Genes <em>Cldn7</em> and <em>Rasef</em> are amongst the top DE genes for both basal versus LP and basal versus ML.</p>
-<div class="sourceCode" id="cb53"><pre class="downlit">
-<span class="va">basal.vs.lp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/toptable.html">topTreat</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">1</span>, n<span class="op">=</span><span class="cn">Inf</span><span class="op">)</span>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">basal.vs.lp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/toptable.html">topTreat</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">1</span>, n<span class="op">=</span><span class="cn">Inf</span><span class="op">)</span>
 <span class="va">basal.vs.ml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/toptable.html">topTreat</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">2</span>, n<span class="op">=</span><span class="cn">Inf</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">basal.vs.lp</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">basal.vs.lp</span><span class="op">)</span></code></pre></div>
 <pre><code>##        ENTREZID SYMBOL TXCHROM logFC AveExpr     t  P.Value adj.P.Val
 ## 12759     12759    Clu   chr14 -5.46    8.86 -33.6 1.72e-10  1.71e-06
 ## 53624     53624  Cldn7   chr11 -5.53    6.30 -32.0 2.58e-10  1.71e-06
@@ -616,8 +616,8 @@ Venn diagram showing the number of genes DE in the comparison between basal vers
 ## 67451     67451   Pkp2   chr16 -5.74    4.42 -29.9 4.58e-10  1.74e-06
 ## 228543   228543   Rhov    chr2 -6.26    5.49 -29.1 5.78e-10  1.74e-06
 ## 70350     70350  Basp1   chr15 -6.08    5.25 -28.3 7.27e-10  1.74e-06</code></pre>
-<div class="sourceCode" id="cb55"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">basal.vs.ml</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">basal.vs.ml</span><span class="op">)</span></code></pre></div>
 <pre><code>##        ENTREZID  SYMBOL TXCHROM logFC AveExpr     t  P.Value adj.P.Val
 ## 242505   242505   Rasef    chr4 -6.53    5.12 -35.1 1.23e-10  1.24e-06
 ## 53624     53624   Cldn7   chr11 -5.50    6.30 -31.7 2.77e-10  1.24e-06
@@ -630,13 +630,13 @@ Venn diagram showing the number of genes DE in the comparison between basal vers
 <h2 class="hasAnchor">
 <a href="#useful-graphical-representations-of-differential-expression-results" class="anchor"></a>Useful graphical representations of differential expression results</h2>
 <p>To summarise results for all genes visually, mean-difference plots, which display log-FCs from the linear model fit against the average log-CPM values can be generated using the <code>plotMD</code> function, with the differentially expressed genes highlighted.</p>
-<div class="sourceCode" id="cb57"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotMD.html">plotMD</a></span><span class="op">(</span><span class="va">tfit</span>, column<span class="op">=</span><span class="fl">1</span>, status<span class="op">=</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, 
-       xlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">8</span>,<span class="fl">13</span><span class="op">)</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotMD.html">plotMD</a></span><span class="op">(</span><span class="va">tfit</span>, column<span class="op">=</span><span class="fl">1</span>, status<span class="op">=</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, 
+       xlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">8</span>,<span class="fl">13</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><strong>Glimma</strong> extends this functionality by providing an interactive mean-difference plot via the <code>glMDPlot</code> function. The output of this function is an html page, with summarised results in the left panel (similar to what is output by <code>plotMD</code>), and the log-CPM values from individual samples for a selected gene in the right panel, with a table of results below the plots. This interactive display allows the user to search for particular genes based on the annotation provided (e.g. Gene symbol identifier), which is not possible in a static <strong>R</strong> plot. <!-- The `glMDPlot` function is not limited to mean-difference plots, with a default version allowing a data frame to be passed with the user able to select the columns of interest to plot in the left panel.  --></p>
-<div class="sourceCode" id="cb58"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/Glimma/man/glMDPlot.html">glMDPlot</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">1</span>, status<span class="op">=</span><span class="va">dt</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,
-         side.main<span class="op">=</span><span class="st">"ENTREZID"</span>, counts<span class="op">=</span><span class="va">lcpm</span>, groups<span class="op">=</span><span class="va">group</span>, launch<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/Glimma/man/glMDPlot.html">glMDPlot</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">1</span>, status<span class="op">=</span><span class="va">dt</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,
+         side.main<span class="op">=</span><span class="st">"ENTREZID"</span>, counts<span class="op">=</span><span class="va">lcpm</span>, groups<span class="op">=</span><span class="va">group</span>, launch<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><a href="glimma-plots/MD-Plot.html">Link to Interactive MD plot</a></p>
 <div class="figure">
 <img src="glMDplot.png" alt=""><p class="caption">Interactive mean-difference plot generated using <strong>Glimma</strong>. Summary data (log-FCs versus log-CPM values) are shown in the left panel which is linked to the individual values per sample for a selected gene in the right panel. A table of results is also displayed below these figures, along with a search bar to allow users to look up a particular gene using the annotation information available, e.g. the Gene symbol identifier <em>Clu</em>.</p>
@@ -644,15 +644,15 @@ Venn diagram showing the number of genes DE in the comparison between basal vers
 <p>The mean-difference plot generated by the command above is available online (see <a href="http://bioinf.wehi.edu.au/folders/limmaWorkflow/glimma-plots/MD-Plot.html">http://bioinf.wehi.edu.au/folders/limmaWorkflow/glimma-plots/MD-Plot.html</a>). The interactivity provided by the <strong>Glimma</strong> package allows additional information to be presented in a single graphical window. <strong>Glimma</strong> is implemented in <strong>R</strong> and Javascript, with the <strong>R</strong> code generating the data which is converted into graphics using the Javascript library D3 (<a href="https://d3js.org">https://d3js.org</a>), with the Bootstrap library handling layouts and Datatables generating the interactive searchable tables. This allows plots to be viewed in any modern browser, which is convenient for including them as linked files from an Rmarkdown report of the analysis.</p>
 <p>Plots shown previously include either all of the genes that are expressed in any one condition (such as the Venn diagram of common DE genes or mean-difference plot) or look at genes individually (log-CPM values shown in right panel of the interactive mean-difference plot). Heatmaps allow users to look at the expression of a subset of genes. This can be give useful insight into the expression of individual groups and samples without losing perspective of the overall study when focusing on individual genes, or losing resolution when examining patterns averaged over thousands of genes at the same time.</p>
 <p>A heatmap is created for the top 100 DE genes (as ranked by adjusted p-value) from the basal versus LP contrast using the <code>heatmap.2</code> function from the <strong>gplots</strong> package. The heatmap correctly clusters samples by cell type and reorders the genes into blocks with similar expression patterns. From the heatmap, we observe that the expression of ML and LP samples are very similar for the top 100 DE genes between basal and LP.</p>
-<div class="sourceCode" id="cb59"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/talgalili/gplots">gplots</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/talgalili/gplots">gplots</a></span><span class="op">)</span>
 <span class="va">basal.vs.lp.topgenes</span> <span class="op">&lt;-</span> <span class="va">basal.vs.lp</span><span class="op">$</span><span class="va">ENTREZID</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">]</span>
 <span class="va">i</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">v</span><span class="op">$</span><span class="va">genes</span><span class="op">$</span><span class="va">ENTREZID</span> <span class="op">%in%</span> <span class="va">basal.vs.lp.topgenes</span><span class="op">)</span>
 <span class="va">mycol</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/gplots/man/colorpanel.html">colorpanel</a></span><span class="op">(</span><span class="fl">1000</span>,<span class="st">"blue"</span>,<span class="st">"white"</span>,<span class="st">"red"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/gplots/man/heatmap.2.html">heatmap.2</a></span><span class="op">(</span><span class="va">lcpm</span><span class="op">[</span><span class="va">i</span>,<span class="op">]</span>, scale<span class="op">=</span><span class="st">"row"</span>,
    labRow<span class="op">=</span><span class="va">v</span><span class="op">$</span><span class="va">genes</span><span class="op">$</span><span class="va">SYMBOL</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, labCol<span class="op">=</span><span class="va">group</span>, 
    col<span class="op">=</span><span class="va">mycol</span>, trace<span class="op">=</span><span class="st">"none"</span>, density.info<span class="op">=</span><span class="st">"none"</span>, 
-   margin<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">6</span><span class="op">)</span>, lhei<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">10</span><span class="op">)</span>, dendrogram<span class="op">=</span><span class="st">"column"</span><span class="op">)</span></pre></div>
+   margin<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">6</span><span class="op">)</span>, lhei<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">10</span><span class="op">)</span>, dendrogram<span class="op">=</span><span class="st">"column"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_files/figure-html/heatmap-1.png" alt="Heatmap of log-CPM values for top 100 genes DE in basal versus LP. Expression across each gene (or row) have been scaled so that mean expression is zero and standard deviation is one. Samples with relatively high expression of a given gene are marked in red and samples with relatively low expression are marked in blue. Lighter shades and white represent genes with intermediate expression levels. Samples and genes have been reordered by the method of hierarchical clustering. A dendrogram is shown for the sample clustering." width="480"><p class="caption">
 Heatmap of log-CPM values for top 100 genes DE in basal versus LP. Expression across each gene (or row) have been scaled so that mean expression is zero and standard deviation is one. Samples with relatively high expression of a given gene are marked in red and samples with relatively low expression are marked in blue. Lighter shades and white represent genes with intermediate expression levels. Samples and genes have been reordered by the method of hierarchical clustering. A dendrogram is shown for the sample clustering.
@@ -664,29 +664,29 @@ Heatmap of log-CPM values for top 100 genes DE in basal versus LP. Expression ac
 <h1 class="hasAnchor">
 <a href="#gene-set-testing-with-camera" class="anchor"></a>Gene set testing with camera</h1>
 <p>We finish off this analysis with some gene set testing by applying the <em>camera</em> method <span class="citation">(Wu and Smyth 2012)</span> to the <em>c2</em> gene signatures from Broad Institute’s MSigDB c2 collection <span class="citation">(Subramanian et al. 2005)</span> that have been adapted for mouse and are available as Rdata objects from <a href="http://bioinf.wehi.edu.au/software/MSigDB/">http://bioinf.wehi.edu.au/software/MSigDB/</a>. Other useful gene sets derived from MSigDB for both human and mouse, such as the hallmark gene sets, are also available from this site. C2 gene sets have been curated from online databases, publications and domain experts, and hallmark gene sets are selected from MSigDB to have well-defined biological states or processes.</p>
-<div class="sourceCode" id="cb60"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"mouse_c2_v5p1.rda"</span>, package <span class="op">=</span> <span class="st">"RNAseq123"</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"mouse_c2_v5p1.rda"</span>, package <span class="op">=</span> <span class="st">"RNAseq123"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">idx</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/ids2indices.html">ids2indices</a></span><span class="op">(</span><span class="va">Mm.c2</span>,id<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">v</span><span class="op">)</span><span class="op">)</span>
 <span class="va">cam.BasalvsLP</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.BasalvsLP</span>,<span class="fl">5</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.BasalvsLP</span>,<span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>##                                             NGenes Direction   PValue      FDR
 ## LIM_MAMMARY_STEM_CELL_UP                       791        Up 1.77e-18 8.36e-15
 ## LIM_MAMMARY_STEM_CELL_DN                       683      Down 4.03e-14 8.69e-11
 ## ROSTY_CERVICAL_CANCER_PROLIFERATION_CLUSTER    170        Up 5.52e-14 8.69e-11
 ## LIM_MAMMARY_LUMINAL_PROGENITOR_UP               94      Down 2.74e-13 3.23e-10
 ## SOTIRIOU_BREAST_CANCER_GRADE_1_VS_3_UP         190        Up 5.16e-13 4.87e-10</code></pre>
-<div class="sourceCode" id="cb62"><pre class="downlit">
-<span class="va">cam.BasalvsML</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.BasalvsML</span>,<span class="fl">5</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cam.BasalvsML</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.BasalvsML</span>,<span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>##                                     NGenes Direction   PValue      FDR
 ## LIM_MAMMARY_STEM_CELL_UP               791        Up 1.68e-22 7.92e-19
 ## LIM_MAMMARY_STEM_CELL_DN               683      Down 7.79e-18 1.84e-14
 ## LIM_MAMMARY_LUMINAL_MATURE_DN          172        Up 9.74e-16 1.53e-12
 ## LIM_MAMMARY_LUMINAL_MATURE_UP          204      Down 1.15e-12 1.36e-09
 ## NAKAYAMA_SOFT_TISSUE_TUMORS_PCA2_UP    137        Up 2.24e-12 1.88e-09</code></pre>
-<div class="sourceCode" id="cb64"><pre class="downlit">
-<span class="va">cam.LPvsML</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.LPvsML</span>,<span class="fl">5</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cam.LPvsML</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.LPvsML</span>,<span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>##                                         NGenes Direction   PValue      FDR
 ## LIM_MAMMARY_LUMINAL_MATURE_DN              172        Up 6.73e-14 2.35e-10
 ## LIM_MAMMARY_LUMINAL_MATURE_UP              204      Down 9.97e-14 2.35e-10
@@ -695,9 +695,9 @@ Heatmap of log-CPM values for top 100 genes DE in basal versus LP. Expression ac
 ## REACTOME_RNA_POL_I_PROMOTER_OPENING         46      Down 2.04e-08 1.93e-05</code></pre>
 <p>The <code>camera</code> function performs a competitive test to assess whether the genes in a given set are highly ranked in terms of differential expression relative to genes that are not in the set. It uses <strong>limma</strong>’s linear model framework, taking both the design matrix and contrast matrix (if present) and accommodates the observational-level weights from <em>voom</em> in the testing procedure. After adjusting the variance of the resulting gene set test statistic by a variance inflation factor, that depends on the gene-wise correlation (which is set to 0.01 by default, but can be estimated from the data) and the size of the set, a <em>p</em>-value is returned and adjusted for multiple testing.</p>
 <p>This experiment is the RNA-seq equivalent of the dataset generated by Lim <em>et al.</em> (2010) <span class="citation">(Lim et al. 2010)</span>, who used Illumina microarrays to profile the same sorted cell populations, so it is reassuring to see the gene signatures from this earlier publication coming up at the top of the list for each contrast. We make a barcodeplot of the Lim <em>et al.</em> (2010) Mature Luminal gene sets (Up and Down) in the LP versus ML contrast. Note that these sets go in the opposite direction in our dataset due to our parameterization which compares LP against ML rather than the other way around (if the contrast were reversed, the directions would be consistent).</p>
-<div class="sourceCode" id="cb66"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/barcodeplot.html">barcodeplot</a></span><span class="op">(</span><span class="va">efit</span><span class="op">$</span><span class="va">t</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, index<span class="op">=</span><span class="va">idx</span><span class="op">$</span><span class="va">LIM_MAMMARY_LUMINAL_MATURE_UP</span>, 
-            index2<span class="op">=</span><span class="va">idx</span><span class="op">$</span><span class="va">LIM_MAMMARY_LUMINAL_MATURE_DN</span>, main<span class="op">=</span><span class="st">"LPvsML"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/limma/man/barcodeplot.html">barcodeplot</a></span><span class="op">(</span><span class="va">efit</span><span class="op">$</span><span class="va">t</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, index<span class="op">=</span><span class="va">idx</span><span class="op">$</span><span class="va">LIM_MAMMARY_LUMINAL_MATURE_UP</span>, 
+            index2<span class="op">=</span><span class="va">idx</span><span class="op">$</span><span class="va">LIM_MAMMARY_LUMINAL_MATURE_DN</span>, main<span class="op">=</span><span class="st">"LPvsML"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_files/figure-html/barcodeplot-1.png" alt="Barcode plot of `LIM_MAMMARY_LUMINAL_MATURE_UP` (red bars, top of plot) and `LIM_MAMMARY_LUMINAL_MATURE_DN` (blue bars, bottom of plot) gene sets in the LP versus ML contrast. For each set, an enrichment line that shows the relative enrichment of the vertical bars in each part of the plot is displayed. The experiment of Lim *et al.* [@Lim:BreastCancerRes:2010] is very similar to the current one, with the same sorting strategy used to obtain the different cell populations, except that microarrays were used instead of RNA-seq to profile gene expression. Note that the inverse correlation (the up gene set is down and the down gene set is up) is a result of the way the contrast has been set up (LP versus ML) -- if reversed, the directionality would agree." width="576"><p class="caption">
 Barcode plot of <code>LIM_MAMMARY_LUMINAL_MATURE_UP</code> (red bars, top of plot) and <code>LIM_MAMMARY_LUMINAL_MATURE_DN</code> (blue bars, bottom of plot) gene sets in the LP versus ML contrast. For each set, an enrichment line that shows the relative enrichment of the vertical bars in each part of the plot is displayed. The experiment of Lim <em>et al.</em> <span class="citation">(Lim et al. 2010)</span> is very similar to the current one, with the same sorting strategy used to obtain the different cell populations, except that microarrays were used instead of RNA-seq to profile gene expression. Note that the inverse correlation (the up gene set is down and the down gene set is up) is a result of the way the contrast has been set up (LP versus ML) – if reversed, the directionality would agree.
@@ -709,11 +709,11 @@ Barcode plot of <code>LIM_MAMMARY_LUMINAL_MATURE_UP</code> (red bars, top of plo
 <h1 class="hasAnchor">
 <a href="#software-and-code-used" class="anchor"></a>Software and code used</h1>
 <p>This RNA-seq workflow makes use of various packages available from version 3.8 of the Bioconductor project, running on <strong>R</strong> version 3.5.1. Besides the software highlighted in this article (<strong>limma</strong>, <strong>Glimma</strong> and <strong>edgeR</strong>) it requires a number of other packages, including <strong>gplots</strong> and <strong>RColorBrewer</strong> and the gene annotation package <strong>Mus.musculus</strong>. This document was compiled using <strong>knitr</strong>. Version numbers for all packages used are shown below. The <strong>RNAseq123</strong> Bioconductor workflow package avaliable from <a href="https://bioconductor.org/packages/RNAseq123">https://bioconductor.org/packages/RNAseq123</a> contains both an English and Chinese (Mandarin) vignette of this artical along with code to perform the complete analysis. Installation of this package manages all of the above-mentioned dependencies and is a useful resource for delivering hands-on training on RNA-seq data analysis.</p>
-<div class="sourceCode" id="cb67"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></pre></div>
-<pre><code>## R version 4.0.2 (2020-06-22)
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>## R version 4.1.0 (2021-05-18)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 20.04 LTS
+## Running under: Ubuntu 20.04.2 LTS
 ## 
 ## Matrix products: default
 ## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
@@ -725,118 +725,124 @@ Barcode plot of <code>LIM_MAMMARY_LUMINAL_MATURE_UP</code> (red bars, top of plo
 ## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] parallel  stats4    stats     graphics  grDevices utils     datasets  methods  
-## [9] base     
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] gplots_3.1.0                              RColorBrewer_1.1-2                       
+##  [1] gplots_3.1.1                              RColorBrewer_1.1-2                       
 ##  [3] Mus.musculus_1.3.1                        TxDb.Mmusculus.UCSC.mm10.knownGene_3.10.0
-##  [5] org.Mm.eg.db_3.11.4                       GO.db_3.11.4                             
-##  [7] OrganismDbi_1.31.1                        GenomicFeatures_1.41.3                   
-##  [9] GenomicRanges_1.41.6                      GenomeInfoDb_1.25.11                     
-## [11] AnnotationDbi_1.51.3                      IRanges_2.23.10                          
-## [13] S4Vectors_0.27.14                         Biobase_2.49.1                           
-## [15] BiocGenerics_0.35.4                       edgeR_3.31.4                             
-## [17] Glimma_1.17.2                             limma_3.45.14                            
-## [19] BiocStyle_2.17.1                         
+##  [5] org.Mm.eg.db_3.13.0                       GO.db_3.13.0                             
+##  [7] OrganismDbi_1.35.0                        GenomicFeatures_1.45.1                   
+##  [9] GenomicRanges_1.45.0                      GenomeInfoDb_1.29.3                      
+## [11] AnnotationDbi_1.55.1                      IRanges_2.27.0                           
+## [13] S4Vectors_0.31.0                          Biobase_2.53.0                           
+## [15] BiocGenerics_0.39.1                       edgeR_3.35.0                             
+## [17] Glimma_2.3.0                              limma_3.49.4                             
+## [19] BiocStyle_2.21.3                         
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bitops_1.0-6                matrixStats_0.57.0          fs_1.5.0                   
-##  [4] bit64_4.0.5                 progress_1.2.2              httr_1.4.2                 
-##  [7] rprojroot_1.3-2             tools_4.0.2                 backports_1.1.10           
-## [10] R6_2.4.1                    KernSmooth_2.23-17          DBI_1.1.0                  
-## [13] tidyselect_1.1.0            prettyunits_1.1.1           bit_4.0.4                  
-## [16] curl_4.3                    compiler_4.0.2              textshaping_0.1.2          
-## [19] graph_1.67.1                xml2_1.3.2                  desc_1.2.0                 
-## [22] DelayedArray_0.15.16        rtracklayer_1.49.5          bookdown_0.21              
-## [25] caTools_1.18.0              RBGL_1.65.0                 askpass_1.1                
-## [28] rappdirs_0.3.1              pkgdown_1.6.1               systemfonts_0.3.2          
-## [31] stringr_1.4.0               digest_0.6.25               Rsamtools_2.5.3            
-## [34] R.utils_2.10.1              rmarkdown_2.4               XVector_0.29.3             
-## [37] pkgconfig_2.0.3             htmltools_0.5.0             MatrixGenerics_1.1.5       
-## [40] highr_0.8                   dbplyr_1.4.4                rlang_0.4.8                
-## [43] RSQLite_2.2.1               generics_0.0.2              jsonlite_1.7.1             
-## [46] gtools_3.8.2                BiocParallel_1.23.2         R.oo_1.24.0                
-## [49] dplyr_1.0.2                 RCurl_1.98-1.2              magrittr_1.5               
-## [52] GenomeInfoDbData_1.2.4      Matrix_1.2-18               Rcpp_1.0.5                 
-## [55] R.methodsS3_1.8.1           lifecycle_0.2.0             stringi_1.5.3              
-## [58] yaml_2.2.1                  SummarizedExperiment_1.19.9 zlibbioc_1.35.0            
-## [61] BiocFileCache_1.13.1        grid_4.0.2                  blob_1.2.1                 
-## [64] crayon_1.3.4                lattice_0.20-41             Biostrings_2.57.2          
-## [67] hms_0.5.3                   locfit_1.5-9.4              knitr_1.30                 
-## [70] pillar_1.4.6                biomaRt_2.45.7              XML_3.99-0.5               
-## [73] glue_1.4.2                  evaluate_0.14               BiocManager_1.30.10        
-## [76] vctrs_0.3.4                 openssl_1.4.3               purrr_0.3.4                
-## [79] assertthat_0.2.1            xfun_0.18                   ragg_0.4.0                 
-## [82] tibble_3.0.4                GenomicAlignments_1.25.3    memoise_1.1.0              
-## [85] ellipsis_0.3.1</code></pre>
+##   [1] colorspace_2.0-2            rjson_0.2.20                ellipsis_0.3.2             
+##   [4] rprojroot_2.0.2             XVector_0.33.0              fs_1.5.0                   
+##   [7] bit64_4.0.5                 fansi_0.5.0                 xml2_1.3.2                 
+##  [10] R.methodsS3_1.8.1           splines_4.1.0               cachem_1.0.5               
+##  [13] geneplotter_1.71.0          knitr_1.33                  jsonlite_1.7.2             
+##  [16] Rsamtools_2.9.1             annotate_1.71.0             dbplyr_2.1.1               
+##  [19] R.oo_1.24.0                 png_0.1-7                   graph_1.71.2               
+##  [22] BiocManager_1.30.16         compiler_4.1.0              httr_1.4.2                 
+##  [25] assertthat_0.2.1            Matrix_1.3-4                fastmap_1.1.0              
+##  [28] htmltools_0.5.1.1           prettyunits_1.1.1           tools_4.1.0                
+##  [31] gtable_0.3.0                glue_1.4.2                  GenomeInfoDbData_1.2.6     
+##  [34] dplyr_1.0.7                 rappdirs_0.3.3              Rcpp_1.0.7                 
+##  [37] pkgdown_1.6.1               vctrs_0.3.8                 Biostrings_2.61.2          
+##  [40] rtracklayer_1.53.1          xfun_0.25                   stringr_1.4.0              
+##  [43] lifecycle_1.0.0             restfulr_0.0.13             gtools_3.9.2               
+##  [46] XML_3.99-0.7                zlibbioc_1.39.0             scales_1.1.1               
+##  [49] ragg_1.1.3                  hms_1.1.0                   MatrixGenerics_1.5.3       
+##  [52] parallel_4.1.0              SummarizedExperiment_1.23.1 RBGL_1.69.0                
+##  [55] yaml_2.2.1                  curl_4.3.2                  memoise_2.0.0              
+##  [58] ggplot2_3.3.5               biomaRt_2.49.4              stringi_1.7.3              
+##  [61] RSQLite_2.2.7               highr_0.9                   genefilter_1.75.0          
+##  [64] BiocIO_1.3.0                desc_1.3.0                  caTools_1.18.2             
+##  [67] filelock_1.0.2              BiocParallel_1.27.3         rlang_0.4.11               
+##  [70] pkgconfig_2.0.3             systemfonts_1.0.2           matrixStats_0.60.0         
+##  [73] bitops_1.0-7                evaluate_0.14               lattice_0.20-44            
+##  [76] purrr_0.3.4                 GenomicAlignments_1.29.0    htmlwidgets_1.5.3          
+##  [79] bit_4.0.4                   tidyselect_1.1.1            magrittr_2.0.1             
+##  [82] bookdown_0.23               DESeq2_1.33.4               R6_2.5.0                   
+##  [85] generics_0.1.0              DelayedArray_0.19.1         DBI_1.1.1                  
+##  [88] pillar_1.6.2                survival_3.2-12             KEGGREST_1.33.0            
+##  [91] RCurl_1.98-1.4              tibble_3.1.3                crayon_1.4.1               
+##  [94] KernSmooth_2.23-20          utf8_1.2.2                  BiocFileCache_2.1.1        
+##  [97] rmarkdown_2.10              progress_1.2.2              locfit_1.5-9.4             
+## [100] grid_4.1.0                  blob_1.2.2                  digest_0.6.27              
+## [103] xtable_1.8-4                R.utils_2.10.1              textshaping_0.3.5          
+## [106] munsell_0.5.0</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
-<div id="refs" class="references">
-<div id="ref-orgHs:2016">
-<p>Bioconductor Core Team. 2016a. <em>Homo.sapiens: Annotation package for the Homo.sapiens object</em>. <a href="https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html">https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-orgHs:2016" class="csl-entry">
+Bioconductor Core Team. 2016a. <em><span class="nocase">Homo.sapiens: Annotation package for the Homo.sapiens object</span></em>. <a href="https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html">https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html</a>.
 </div>
-<div id="ref-orgMm:2016">
-<p>———. 2016b. <em>Mus.musculus: Annotation package for the Mus.musculus object</em>. <a href="https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html">https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html</a>.</p>
+<div id="ref-orgMm:2016" class="csl-entry">
+———. 2016b. <em><span class="nocase">Mus.musculus: Annotation package for the Mus.musculus object</span></em>. <a href="https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html">https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html</a>.
 </div>
-<div id="ref-Durinck:Bioinf:2005">
-<p>Durinck, S., Y. Moreau, A. Kasprzyk, S. Davis, B. De Moor, A. Brazma, and W. Huber. 2005. “BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis.” <em>Bioinformatics</em> 21: 3439–40.</p>
+<div id="ref-Durinck:Bioinf:2005" class="csl-entry">
+Durinck, S., Y. Moreau, A. Kasprzyk, S. Davis, B. De Moor, A. Brazma, and W. Huber. 2005. <span>“<span class="nocase">BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis</span>.”</span> <em>Bioinformatics</em> 21: 3439–40.
 </div>
-<div id="ref-Durinck:NatureProtocols:2009">
-<p>Durinck, S., P. Spellman, E. Birney, and W. Huber. 2009. “Mapping identifiers for the integration of genomic datasets with the R/Bioconductor package biomaRt.” <em>Nature Protocols</em> 4: 1184–91.</p>
+<div id="ref-Durinck:NatureProtocols:2009" class="csl-entry">
+Durinck, S., P. Spellman, E. Birney, and W. Huber. 2009. <span>“<span class="nocase">Mapping identifiers for the integration of genomic datasets with the R/Bioconductor package biomaRt</span>.”</span> <em>Nature Protocols</em> 4: 1184–91.
 </div>
-<div id="ref-Huber:NatureMethods:2015">
-<p>Huber, W., V. J. Carey, R. Gentleman, S. Anders, M. Carlson, B. S. Carvalho, H. C. Bravo, et al. 2015. “Orchestrating High-Throughput Genomic Analysis with Bioconductor.” <em>Nature Methods</em> 12 (2): 115–21. <a href="http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html">http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html</a>.</p>
+<div id="ref-Huber:NatureMethods:2015" class="csl-entry">
+Huber, W., V. J. Carey, R. Gentleman, S. Anders, M. Carlson, B. S. Carvalho, H. C. Bravo, et al. 2015. <span>“<span>O</span>rchestrating High-Throughput Genomic Analysis with <span>B</span>ioconductor.”</span> <em>Nature Methods</em> 12 (2): 115–21. <a href="http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html">http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html</a>.
 </div>
-<div id="ref-Law:GenomeBiol:2014">
-<p>Law, C. W., Y. Chen, W. Shi, and G. K. Smyth. 2014. “Voom: Precision Weights Unlock Linear Model Analysis Tools for RNA-seq Read Counts.” <em>Genome Biology</em> 15: R29.</p>
+<div id="ref-Law:GenomeBiol:2014" class="csl-entry">
+Law, C. W., Y. Chen, W. Shi, and G. K. Smyth. 2014. <span>“<span>Voom:</span> Precision Weights Unlock Linear Model Analysis Tools for <span class="nocase">RNA-seq</span> Read Counts.”</span> <em>Genome Biology</em> 15: R29.
 </div>
-<div id="ref-Liao:NAR:2013">
-<p>Liao, Y., G. K. Smyth, and W. Shi. 2013. “The Subread Aligner: Fast, Accurate and Scalable Read Mapping by Seed-and-Vote.” <em>Nucleic Acids Res</em> 41 (10): e108.</p>
+<div id="ref-Liao:NAR:2013" class="csl-entry">
+Liao, Y., G. K. Smyth, and W. Shi. 2013. <span>“The <span>S</span>ubread Aligner: Fast, Accurate and Scalable Read Mapping by Seed-and-Vote.”</span> <em>Nucleic Acids Res</em> 41: e108.
 </div>
-<div id="ref-Liao:Bioinformatics:2014">
-<p>———. 2014. “featureCounts: an Efficient General-Purpose Program for Assigning Sequence Reads to Genomic Features.” <em>Bioinformatics</em> 30 (7): 923–30.</p>
+<div id="ref-Liao:Bioinformatics:2014" class="csl-entry">
+———. 2014. <span>“<span class="nocase">featureCounts:</span> An Efficient General-Purpose Program for Assigning Sequence Reads to Genomic Features.”</span> <em>Bioinformatics</em> 30 (7): 923–30.
 </div>
-<div id="ref-Lim:BreastCancerRes:2010">
-<p>Lim, E., D. Wu, B. Pal, T. Bouras, M. L. Asselin-Labat, F. Vaillant, H. Yagita, G. J. Lindeman, G. K. Smyth, and J. E. Visvader. 2010. “Transcriptome analyses of mouse and human mammary cell subpopulations reveal multiple conserved genes and pathways.” <em>Breast Cancer Research</em> 12 (2): R21.</p>
+<div id="ref-Lim:BreastCancerRes:2010" class="csl-entry">
+Lim, E., D. Wu, B. Pal, T. Bouras, M. L. Asselin-Labat, F. Vaillant, H. Yagita, G. J. Lindeman, G. K. Smyth, and J. E. Visvader. 2010. <span>“<span class="nocase">Transcriptome analyses of mouse and human mammary cell subpopulations reveal multiple conserved genes and pathways.</span>”</span> <em>Breast Cancer Research</em> 12 (2): R21.
 </div>
-<div id="ref-Liu:GenomicsData:2016">
-<p>Liu, R., K. Chen, N. Jansz, M. E. Blewitt, and M. E. Ritchie. 2016. “Transcriptional Profiling of the Epigenetic Regulator Smchd1.” <em>Genomics Data</em> 7: 144–7.</p>
+<div id="ref-Liu:GenomicsData:2016" class="csl-entry">
+Liu, R., K. Chen, N. Jansz, M. E. Blewitt, and M. E. Ritchie. 2016. <span>“Transcriptional Profiling of the Epigenetic Regulator <span>S</span>mchd1.”</span> <em>Genomics Data</em> 7: 144–47.
 </div>
-<div id="ref-Liu:NAR:2015">
-<p>Liu, R., A. Z. Holik, S. Su, N. Jansz, K. Chen, H. S. Leong, M. E. Blewitt, M. L. Asselin-Labat, G. K. Smyth, and M. E. Ritchie. 2015. “Why weight? Combining voom with estimates of sample quality improves power in RNA-seq analyses.” <em>Nucleic Acids Res</em> 43: e97.</p>
+<div id="ref-Liu:NAR:2015" class="csl-entry">
+Liu, R., A. Z. Holik, S. Su, N. Jansz, K. Chen, H. S. Leong, M. E. Blewitt, M. L. Asselin-Labat, G. K. Smyth, and M. E. Ritchie. 2015. <span>“<span class="nocase">Why weight? Combining voom with estimates of sample quality improves power in RNA-seq analyses.</span>”</span> <em>Nucleic Acids Res</em> 43: e97.
 </div>
-<div id="ref-McCarthy:Bioinf:2009">
-<p>McCarthy, D. J., and G. K. Smyth. 2009. “Testing significance relative to a fold-change threshold is a TREAT.” <em>Bioinformatics</em> 25: 765–71.</p>
+<div id="ref-McCarthy:Bioinf:2009" class="csl-entry">
+McCarthy, D. J., and G. K. Smyth. 2009. <span>“<span class="nocase">Testing significance relative to a fold-change threshold is a TREAT</span>.”</span> <em>Bioinformatics</em> 25: 765–71.
 </div>
-<div id="ref-Ritchie:NAR:2015">
-<p>Ritchie, M. E., B. Phipson, D. Wu, Y. Hu, C. W. Law, W. Shi, and G. K. Smyth. 2015. “limma Powers Differential Expression Analyses for RNA-Sequencing and Microarray Studies.” <em>Nucleic Acids Res</em> 43 (7): e47.</p>
+<div id="ref-Ritchie:NAR:2015" class="csl-entry">
+Ritchie, M. E., B. Phipson, D. Wu, Y. Hu, C. W. Law, W. Shi, and G. K. Smyth. 2015. <span>“<span class="nocase">limma</span> Powers Differential Expression Analyses for <span>RNA</span>-Sequencing and Microarray Studies.”</span> <em>Nucleic Acids Res</em> 43 (7): e47.
 </div>
-<div id="ref-Robinson:Bioinformatics:2010">
-<p>Robinson, M. D., D. J. McCarthy, and G. K. Smyth. 2010. “edgeR: A Bioconductor Package for Differential Expression Analysis of Digital Gene Expression Data.” <em>Bioinformatics</em> 26: 139–40.</p>
+<div id="ref-Robinson:Bioinformatics:2010" class="csl-entry">
+Robinson, M. D., D. J. McCarthy, and G. K. Smyth. 2010. <span>“<span class="nocase">edgeR</span>: A <span>Bioconductor</span> Package for Differential Expression Analysis of Digital Gene Expression Data.”</span> <em>Bioinformatics</em> 26: 139–40.
 </div>
-<div id="ref-RobinsonOshlack:GenomeBiol:2010">
-<p>Robinson, M. D., and A. Oshlack. 2010. “A Scaling Normalization Method for Differential Expression Analysis of RNA-seq data.” <em>Genome Biology</em> 11: R25.</p>
+<div id="ref-RobinsonOshlack:GenomeBiol:2010" class="csl-entry">
+Robinson, M. D., and A. Oshlack. 2010. <span>“A Scaling Normalization Method for Differential Expression Analysis of <span class="nocase">RNA-seq data</span>.”</span> <em>Genome Biology</em> 11: R25.
 </div>
-<div id="ref-Sheridan:BMCCancer:2015">
-<p>Sheridan, J. M., M. E. Ritchie, S. A. Best, K. Jiang, T. J. Beck, F. Vaillant, K. Liu, et al. 2015. “A pooled shRNA screen for regulators of primary mammary stem and progenitor cells identifies roles for Asap1 and Prox1.” <em>BMC Cancer</em> 15 (1): 221.</p>
+<div id="ref-Sheridan:BMCCancer:2015" class="csl-entry">
+Sheridan, J. M., M. E. Ritchie, S. A. Best, K. Jiang, T. J. Beck, F. Vaillant, K. Liu, et al. 2015. <span>“<span class="nocase">A pooled shRNA screen for regulators of primary mammary stem and progenitor cells identifies roles for Asap1 and Prox1</span>.”</span> <em>BMC Cancer</em> 15 (1): 221.
 </div>
-<div id="ref-Smyth:SAGMB:2004">
-<p>Smyth, G. K. 2004. “Linear Models and Empirical Bayes Methods for Assessing Differential Expression in Microarray Experiments.” <em>Stat Appl Genet Mol Biol</em> 3 (1): Article 3.</p>
+<div id="ref-Smyth:SAGMB:2004" class="csl-entry">
+Smyth, G. K. 2004. <span>“Linear Models and Empirical <span>B</span>ayes Methods for Assessing Differential Expression in Microarray Experiments.”</span> <em>Stat Appl Genet Mol Biol</em> 3 (1): Article 3.
 </div>
-<div id="ref-Glimma:2016">
-<p>Su, S., C. W. Law, C. Ah-Cann, M. L. Asselin-Labat, M. E. Blewitt, and M. E. Ritchie. 2017. “Glimma: Interactive Graphics for Gene Expression Analysis.” <em>Bioinformatics</em> 33: 2050–52.</p>
+<div id="ref-Glimma:2016" class="csl-entry">
+Su, S., C. W. Law, C. Ah-Cann, M. L. Asselin-Labat, M. E. Blewitt, and M. E. Ritchie. 2017. <span>“Glimma: Interactive Graphics for Gene Expression Analysis.”</span> <em>Bioinformatics</em> 33: 2050–52.
 </div>
-<div id="ref-Subramanianetal:PNAS:2005">
-<p>Subramanian, A., P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, et al. 2005. “Gene Set Enrichment Analysis: A Knowledge-Based Approach for Interpreting Genome-Wide Expression Profiles.” <em>Proc Natl Acad Sci U S A</em> 102 (43): 15545–50.</p>
+<div id="ref-Subramanianetal:PNAS:2005" class="csl-entry">
+Subramanian, A., P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, et al. 2005. <span>“Gene Set Enrichment Analysis: A Knowledge-Based Approach for Interpreting Genome-Wide Expression Profiles.”</span> <em>Proc Natl Acad Sci U S A</em> 102 (43): 15545–50.
 </div>
-<div id="ref-Wu:Bioinf:2010">
-<p>Wu, D., E. Lim, F. Vaillant, M. L. Asselin-Labat, J. E. Visvader, and G. K. Smyth. 2010. “ROAST: rotation gene set tests for complex microarray experiments.” <em>Bioinformatics</em> 26 (17): 2176–82.</p>
+<div id="ref-Wu:Bioinf:2010" class="csl-entry">
+Wu, D., E. Lim, F. Vaillant, M. L. Asselin-Labat, J. E. Visvader, and G. K. Smyth. 2010. <span>“<span class="nocase">ROAST: rotation gene set tests for complex microarray experiments</span>.”</span> <em>Bioinformatics</em> 26 (17): 2176–82.
 </div>
-<div id="ref-Wu:NAR:2012">
-<p>Wu, D., and G. K. Smyth. 2012. “Camera: a competitive gene set test accounting for inter-gene correlation.” <em>Nucleic Acids Res</em> 40 (17): e133.</p>
+<div id="ref-Wu:NAR:2012" class="csl-entry">
+Wu, D., and G. K. Smyth. 2012. <span>“<span class="nocase">Camera: a competitive gene set test accounting for inter-gene correlation.</span>”</span> <em>Nucleic Acids Res</em> 40 (17): e133.
 </div>
 </div>
 </div>
@@ -853,7 +859,7 @@ Barcode plot of <code>LIM_MAMMARY_LUMINAL_MATURE_UP</code> (red bars, top of plo
 
 
       <footer><div class="copyright">
-  <p>Developed by Charity Law, Monther Alhamdoosh, Shian Su, Xueyi Dong, Luyi Tian, Gordon Smyth, Matthew Ritchie.</p>
+  <p>Developed by Xueyi Dong, Charity Law, Monther Alhamdoosh, Shian Su, Luyi Tian, Gordon Smyth, Matthew Ritchie.</p>
 </div>
 
 <div class="pkgdown">

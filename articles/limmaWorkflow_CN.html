@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌 • RNAseq123CN</title>
+<title>使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌 • RNAseq123workshop</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌">
-<meta property="og:description" content="RNAseq123CN">
+<meta property="og:description" content="RNAseq123workshop">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -36,8 +36,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">RNAseq123CN</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.12.0</span>
+        <a class="navbar-link" href="../index.html">RNAseq123workshop</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.13.0</span>
       </span>
     </div>
 
@@ -45,7 +45,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -70,7 +70,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/XueyiDong/RNAseq123CN">
+  <a href="https://github.com/XueyiDong/RNAseq123workshop">
     <span class="fa fa-github"></span>
      
   </a>
@@ -85,7 +85,7 @@
 
       
 
-      </header><script src="limmaWorkflow_CN_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="limmaWorkflow_CN_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌</h1>
@@ -105,7 +105,7 @@
             <address class="author_afil">
       The Walter and Eliza Hall Institute of Medical Research, 1G Royal Parade, Parkville, VIC 3052, Melbourne, Australia; Department of Medical Biology, The University of Melbourne, Parkville, VIC 3010, Melbourne, Australia; School of Mathematics and Statistics, The University of Melbourne, Parkville, VIC 3010, Melbourne, Australia<br><h4 class="date">2018年12月17日</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/XueyiDong/RNAseq123CN/blob/master/vignettes/limmaWorkflow_CN.Rmd"><code>vignettes/limmaWorkflow_CN.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/XueyiDong/RNAseq123workshop/blob/master/vignettes/limmaWorkflow_CN.Rmd"><code>vignettes/limmaWorkflow_CN.Rmd</code></a></small>
       <div class="hidden name"><code>limmaWorkflow_CN.Rmd</code></div>
 
     </address>
@@ -137,11 +137,11 @@
 <div id="初始配置" class="section level1">
 <h1 class="hasAnchor">
 <a href="#%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE" class="anchor"></a>初始配置</h1>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioinf.wehi.edu.au/limma">limma</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Shians/Glimma">Glimma</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioinf.wehi.edu.au/limma">limma</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hasaru-k/GlimmaV2">Glimma</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://bioinf.wehi.edu.au/edgeR">edgeR</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">Mus.musculus</span><span class="op">)</span></pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">Mus.musculus</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="数据整合" class="section level1">
 <h1 class="hasAnchor">
@@ -150,23 +150,23 @@
 <h2 class="hasAnchor">
 <a href="#%E8%AF%BB%E5%85%A5%E8%AE%A1%E6%95%B0%E6%95%B0%E6%8D%AE" class="anchor"></a>读入计数数据</h2>
 <p>首先，从<a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file">https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file</a>下载文件<em>GSE63310_RAW.tar</em>，并从压缩包中解压出相关的文件。下方的代码将完成此步骤，或者您也可以手动进行这一步并继续后续分析。</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file"</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file"</span>
 <span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="va">url</span>, destfile<span class="op">=</span><span class="st">"GSE63310_RAW.tar"</span>, mode<span class="op">=</span><span class="st">"wb"</span><span class="op">)</span> 
 <span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/untar.html">untar</a></span><span class="op">(</span><span class="st">"GSE63310_RAW.tar"</span>, exdir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span>
 <span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GSM1545535_10_6_5_11.txt"</span>, <span class="st">"GSM1545536_9_6_5_11.txt"</span>, <span class="st">"GSM1545538_purep53.txt"</span>,
   <span class="st">"GSM1545539_JMS8-2.txt"</span>, <span class="st">"GSM1545540_JMS8-3.txt"</span>, <span class="st">"GSM1545541_JMS8-4.txt"</span>,
   <span class="st">"GSM1545542_JMS8-5.txt"</span>, <span class="st">"GSM1545544_JMS9-P7c.txt"</span>, <span class="st">"GSM1545545_JMS9-P8c.txt"</span><span class="op">)</span>
 <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">files</span>, <span class="st">".gz"</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span><span class="op">)</span>
-  <span class="fu">R.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/R.utils/man/compressFile.html">gunzip</a></span><span class="op">(</span><span class="va">i</span>, overwrite<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></pre></div>
+  <span class="fu">R.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/R.utils/man/compressFile.html">gunzip</a></span><span class="op">(</span><span class="va">i</span>, overwrite<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>每一个文本文件均为对应样品的原始基因水平计数矩阵。需要注意我们的这次分析仅包含了此实验中的basal、LP和ML样品（可见下方所示文件名）。</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GSM1545535_10_6_5_11.txt"</span>, <span class="st">"GSM1545536_9_6_5_11.txt"</span>, 
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GSM1545535_10_6_5_11.txt"</span>, <span class="st">"GSM1545536_9_6_5_11.txt"</span>, 
    <span class="st">"GSM1545538_purep53.txt"</span>, <span class="st">"GSM1545539_JMS8-2.txt"</span>, 
    <span class="st">"GSM1545540_JMS8-3.txt"</span>, <span class="st">"GSM1545541_JMS8-4.txt"</span>, 
    <span class="st">"GSM1545542_JMS8-5.txt"</span>, <span class="st">"GSM1545544_JMS9-P7c.txt"</span>, 
    <span class="st">"GSM1545545_JMS9-P8c.txt"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.delim</a></span><span class="op">(</span><span class="va">files</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, nrow<span class="op">=</span><span class="fl">5</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.delim</a></span><span class="op">(</span><span class="va">files</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, nrow<span class="op">=</span><span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>##    EntrezID GeneLength Count
 ## 1    497097       3634     1
 ## 2 100503874       3259     0
@@ -174,14 +174,14 @@
 ## 4     19888       9747     0
 ## 5     20671       3130     1</code></pre>
 <p>相比于分别读入这九个文本文件然后合并为一个计数矩阵，<strong>edgeR</strong>提供了更方便的途径，使用<code>readDGE</code>函数即可一步完成。得到的DGEList对象中包含一个计数矩阵，它的27179行分别对应每个基因不重复的Entrez基因ID，九列分别对应此实验中的每个样品。</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/readDGE.html">readDGE</a></span><span class="op">(</span><span class="va">files</span>, columns<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/readDGE.html">readDGE</a></span><span class="op">(</span><span class="va">files</span>, columns<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "DGEList"
 ## attr(,"package")
 ## [1] "edgeR"</code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 27179     9</code></pre>
 <p>如果数据不是每个样品一个文件的形式，而是一个包含所有样品的计数的文件，则可以先将文件读入<strong>R</strong>，再使用<code>DGEList</code>函数转换为一个DGEList对象。</p>
 </div>
@@ -190,19 +190,19 @@
 <a href="#%E7%BB%84%E7%BB%87%E6%A0%B7%E5%93%81%E4%BF%A1%E6%81%AF" class="anchor"></a>组织样品信息</h2>
 <p>为进行下游分析，需要将有关实验设计的样品信息与计数矩阵的列关联起来。这里需要包括各种对表达水平有影响的实验变量，无论是生物变量还是技术变量。例如，细胞类型（在这个实验中是basal、LP和ML）、基因型（野生型、敲除）、表型（疾病状态、性别、年龄）、样品处理（用药、对照）和批次信息（如果样品是在不同时间点进行收集和分析的，需要记录进行实验的时间）等。</p>
 <p>我们的DGEList对象中包含的<code>samples</code>数据框同时存储了细胞类型（<code>group</code>）和批次（测序泳道<code>lane</code>）信息，每种信息都包含三个不同的水平。在<code>x$samples</code>中，程序会自动计算每个样品的文库大小（即样品的总序列计数），归一化系数会被预先设置为1。 为了方便阅读，我们从DGEList对象<code>x</code>的列名中删去了GEO样品ID（GSM*）。</p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="va">samplenames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substring</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fl">12</span>, <span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="va">samplenames</span></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">samplenames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substring</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fl">12</span>, <span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">samplenames</span></code></pre></div>
 <pre><code>## [1] "10_6_5_11" "9_6_5_11"  "purep53"   "JMS8-2"    "JMS8-3"    "JMS8-4"    "JMS8-5"   
 ## [8] "JMS9-P7c"  "JMS9-P8c"</code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">samplenames</span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">samplenames</span>
 <span class="va">group</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"LP"</span>, <span class="st">"ML"</span>, <span class="st">"Basal"</span>, <span class="st">"Basal"</span>, <span class="st">"ML"</span>, <span class="st">"LP"</span>, 
                      <span class="st">"Basal"</span>, <span class="st">"ML"</span>, <span class="st">"LP"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">group</span> <span class="op">&lt;-</span> <span class="va">group</span>
 <span class="va">lane</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"L004"</span>,<span class="st">"L006"</span>,<span class="st">"L008"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">lane</span> <span class="op">&lt;-</span> <span class="va">lane</span>
-<span class="va">x</span><span class="op">$</span><span class="va">samples</span></pre></div>
+<span class="va">x</span><span class="op">$</span><span class="va">samples</span></code></pre></div>
 <pre><code>##                              files group lib.size norm.factors lane
 ## 10_6_5_11 GSM1545535_10_6_5_11.txt    LP 32863052            1 L004
 ## 9_6_5_11   GSM1545536_9_6_5_11.txt    ML 35335491            1 L004
@@ -220,11 +220,11 @@
 <p>我们的DGEList对象中的第二个数据框名为<code>genes</code>，用于存储与计数矩阵的行相关联的基因信息。 为检索这些信息，我们可以使用特定物种的注释包，比如小鼠的<strong>Mus.musculus</strong> <span class="citation">(Bioconductor Core Team 2016b)</span>（或人类的<strong>Homo.sapiens</strong> <span class="citation">(Bioconductor Core Team 2016a)</span>）；或者也可以使用<strong>biomaRt</strong> 包 <span class="citation">(Durinck et al. 2005, 2009)</span>，它通过接入Ensembl genome数据库来进行基因注释。</p>
 <p>可以检索的信息类型包括基因符号（gene symbols）、基因名称（gene names）、染色体名称和位置、Entrez基因ID、Refseq基因ID和Ensembl基因ID等。<strong>biomaRt</strong>主要通过Ensembl基因ID进行检索，而<strong>Mus.musculus</strong>包含来自不同来源的信息，允许用户从不同基因ID中选择某一种作为检索键。</p>
 <p>我们使用<strong>Mus.musculus</strong>包，利用我们数据集中的Entrez基因ID来检索相关的基因符号和染色体信息。</p>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="va">geneid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">geneid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
 <span class="va">genes</span> <span class="op">&lt;-</span> <span class="fu">select</span><span class="op">(</span><span class="va">Mus.musculus</span>, keys<span class="op">=</span><span class="va">geneid</span>, columns<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SYMBOL"</span>, <span class="st">"TXCHROM"</span><span class="op">)</span>, 
                 keytype<span class="op">=</span><span class="st">"ENTREZID"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">genes</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">genes</span><span class="op">)</span></code></pre></div>
 <pre><code>##    ENTREZID  SYMBOL TXCHROM
 ## 1    497097    Xkr4    chr1
 ## 2 100503874 Gm19938    &lt;NA&gt;
@@ -233,12 +233,12 @@
 ## 5     20671   Sox17    chr1
 ## 6     27395  Mrpl15    chr1</code></pre>
 <p>与任何基因ID一样，Entrez基因ID可能不能一对一地匹配我们想获得的基因信息。在处理之前，检查重复的基因ID和弄清楚重复的来源非常重要。我们的基因注释中包含28个能匹配到多个不同染色体的基因（比如基因Gm1987关联于染色体<em>chr4</em>和<em>chr4_JH584294_random</em>，小RNA Mir5098关联于<em>chr2</em>，<em>chr5</em>，<em>chr8</em>，<em>chr11</em>和<em>chr17</em>）。 为了处理重复的基因ID，我们可以合并来自多重匹配基因的所有染色体信息，比如将基因Gm1987分配到<em>chr4 and chr4_JH584294_random</em>，或选取其中一条染色体来代表具有重复注释的基因。为了简单起见，我们选择后者，保留每个基因ID第一次出现的信息。</p>
-<div class="sourceCode" id="cb15"><pre class="downlit">
-<span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">genes</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/duplicated.html">duplicated</a></span><span class="op">(</span><span class="va">genes</span><span class="op">$</span><span class="va">ENTREZID</span><span class="op">)</span>,<span class="op">]</span></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">genes</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/duplicated.html">duplicated</a></span><span class="op">(</span><span class="va">genes</span><span class="op">$</span><span class="va">ENTREZID</span><span class="op">)</span>,<span class="op">]</span></code></pre></div>
 <p>在此例子中，注释与数据对象中的基因顺序是相同的。如果由于缺失和／或重新排列基因ID导致其顺序不一致，我们可以用<code>match</code>函数来正确排序基因。然后，我们将基因注释的数据框添加到DGEList对象，数据的整合就完成了，此时的数据对象中含有原始计数数据以及相关的样品信息和基因注释。</p>
-<div class="sourceCode" id="cb16"><pre class="downlit">
-<span class="va">x</span><span class="op">$</span><span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">genes</span>
-<span class="va">x</span></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">$</span><span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">genes</span>
+<span class="va">x</span></code></pre></div>
 <pre><code>## An object of class "DGEList"
 ## $samples
 ##                              files group lib.size norm.factors lane
@@ -281,18 +281,18 @@
 <p>由于更深的测序总会产生更多的序列片段，在差异表达及相关的分析中，我们很少直接使用序列数。在实际操作时，我们通常将原始的序列数进行归一化，来消除测序深度所导致的差异。通常被使用的方法有基于序列的CPM（counts per million）、log-CPM、FPKM（fragments per kilobase of transcript per million），和基于转录本数目的RPKM（reads per kilobase of transcript per million）。</p>
 <p>我们在分析中通常使用CPM和log-CPM转换。虽然RPKM和FPKM可以校正基因长度区别的影响，但CPM和log-CPM只使用计数矩阵即可计算，且已足以满足我们所关注的比较的需要。假设不同条件之间剪接异构体（isoform）的表达比例没有变化，差异表达分析关注的是同一基因在不同条件之间表达水平的相对差异，而不是比较多个基因之间的差异或测定绝对表达量。换而言之，基因长度在我们进行比较的不同组之间是始终不变的，且任何观测到的差异都来自于不同组的条件的变化而不是基因长度的变化。</p>
 <p>我们使用<strong>edgeR</strong>中的<code>cpm</code>函数将原始计数转换为CPM和log-CPM值。如果可以提供基因长度信息，RPKM值的计算也和CPM值的计算一样简单，只需使用<strong>edgeR</strong>中的<code>rpkm</code>函数。</p>
-<div class="sourceCode" id="cb18"><pre class="downlit">
-<span class="va">cpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
-<span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span>, log<span class="op">=</span><span class="cn">TRUE</span>, prior.count<span class="op">=</span><span class="fl">2</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span>, log<span class="op">=</span><span class="cn">TRUE</span>, prior.count<span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
 <p>对于一个基因，CPM值为1相当于在本实验测序深度最低的样品中（JMS9-P8c, 文库大小约2千万）有20个计数，或者在测序深度最高的样品中（JMS8-3，文库大小约7.6千万）有76个计数。</p>
 <p>log-CPM值将被用于探索性图表中。当设置<code>log=TRUE</code>时，<code>cpm</code>函数会给CPM值加上一个弥补值并进行log2转换。默认的弥补值是2/<em>L</em>，其中2是“预先计数”，而<em>L</em>是样本文库大小（以百万计）的平均值，所以log-CPM值是根据CPM值通过log<sub>2</sub>(CPM + 2/<em>L</em>)计算得到的。这样的计算方式可以确保任意两个具有相同CPM值的序列片段计数的log-CPM值也相同。弥补值的使用可以避免对零取对数，并能使所有样本间的对数倍数变化（log-fold-change）向0推移而减小低表达基因间微小计数变化带来的巨大的伪差异性，这对于绘制探索性图表很有帮助。在这个数据集中，平均的样本文库大小是4.55千万，所以L约等于45.5，且每个样本中的最小log-CPM值为log<sub>2</sub>(2/45.5) = -4.51。换而言之，在加上了预先计数弥补值后，此数据集中的零表达计数对应的log-CPM值为-4.51：</p>
-<div class="sourceCode" id="cb19"><pre class="downlit">
-<span class="va">L</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">lib.size</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1e-6</span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">L</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">lib.size</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1e-6</span>
 <span class="va">M</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">lib.size</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1e-6</span>
-<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">L</span>, <span class="va">M</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">L</span>, <span class="va">M</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 45.5 51.4</code></pre>
-<div class="sourceCode" id="cb21"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">lcpm</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">lcpm</span><span class="op">)</span></code></pre></div>
 <pre><code>##    10_6_5_11        9_6_5_11        purep53          JMS8-2          JMS8-3     
 ##  Min.   :-4.51   Min.   :-4.51   Min.   :-4.51   Min.   :-4.51   Min.   :-4.51  
 ##  1st Qu.:-4.51   1st Qu.:-4.51   1st Qu.:-4.51   1st Qu.:-4.51   1st Qu.:-4.51  
@@ -313,24 +313,24 @@
 <h2 class="hasAnchor">
 <a href="#%E5%88%A0%E9%99%A4%E4%BD%8E%E8%A1%A8%E8%BE%BE%E5%9F%BA%E5%9B%A0" class="anchor"></a>删除低表达基因</h2>
 <p>所有数据集中都混有表达的基因与不表达的基因。我们想要检测在一种条件中表达但在另一种条件中不表达的基因，但也有一些基因在所有样品中都不表达。实际上，这个数据集中19%的基因在所有九个样品中的计数都是零。</p>
-<div class="sourceCode" id="cb23"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">counts</span><span class="op">==</span><span class="fl">0</span><span class="op">)</span><span class="op">==</span><span class="fl">9</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">counts</span><span class="op">==</span><span class="fl">0</span><span class="op">)</span><span class="op">==</span><span class="fl">9</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ## FALSE  TRUE 
 ## 22026  5153</code></pre>
 <p>log-CPM值的分布图表显示每个样本中很大一部分基因都是不表达或者表达程度相当低的，它们的log-CPM值非常小甚至是负的（图1A）。</p>
 <p>在任何样本中都没有足够多的序列片段的基因应该从下游分析中过滤掉。这样做的原因有好几个。 从生物学的角度来看，在任何条件下的表达水平都不具有生物学意义的基因都不值得关注，因此最好忽略。 从统计学的角度来看，去除低表达计数基因使数据中的均值 - 方差关系可以得到更精确的估计，并且还减少了下游的差异表达分析中需要进行的统计检验的数量。</p>
 <p><strong>edgeR</strong>包中的<code>filterByExpr</code>函数提供了自动过滤基因的方法，可保留尽可能多的有足够表达计数的基因。</p>
-<div class="sourceCode" id="cb25"><pre class="downlit">
-<span class="va">keep.exprs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/filterByExpr.html">filterByExpr</a></span><span class="op">(</span><span class="va">x</span>, group<span class="op">=</span><span class="va">group</span><span class="op">)</span>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">keep.exprs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/filterByExpr.html">filterByExpr</a></span><span class="op">(</span><span class="va">x</span>, group<span class="op">=</span><span class="va">group</span><span class="op">)</span>
 <span class="va">x</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="va">keep.exprs</span>,, keep.lib.sizes<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 16624     9</code></pre>
 <p>此函数默认选取最小的组内的样本数量为最小样本数，保留至少在这个数量的样本中有10个或更多计数的基因。实际进行过滤时，使用的是CPM值而不是表达计数，以避免对总序列数大的样本的偏向性。在这个数据集中，总序列数的中位数是5.1千万，且10/51约等于0.2，所以<code>filterByExpr</code>函数保留在至少三个样本中CPM值大于等于0.2的基因。在我们的此次实验中，一个具有生物学意义的基因需要在至少三个样本中表达，因为三种细胞类型组内各有三个重复。过滤的阈值取决于测序深度和实验设计。如果样本总表达计数量增大，那么可以选择更低的CPM阈值，因为更大的总表达计数量提供了更好的分辨率来探究更多表达水平更低的基因。</p>
 <p>使用这个标准，基因的数量减少到了16624个，约为开始时数量的60%。过滤后的log-CPM值显示出每个样本的分布基本相同（下图B部分）。需要注意的是，从整个DGEList对象中取子集时同时删除了被过滤的基因的计数和其相关的基因信息。留下的基因相对应的基因信息和计数在过滤后的DGEList对象中被保留。</p>
 <p>下方给出的是绘图所用代码。</p>
-<div class="sourceCode" id="cb27"><pre class="downlit">
-<span class="va">lcpm.cutoff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log2</a></span><span class="op">(</span><span class="fl">10</span><span class="op">/</span><span class="va">M</span> <span class="op">+</span> <span class="fl">2</span><span class="op">/</span><span class="va">L</span><span class="op">)</span>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">lcpm.cutoff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log2</a></span><span class="op">(</span><span class="fl">10</span><span class="op">/</span><span class="va">M</span> <span class="op">+</span> <span class="fl">2</span><span class="op">/</span><span class="va">L</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span>
 <span class="va">nsamples</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
 <span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="va">nsamples</span>, <span class="st">"Paired"</span><span class="op">)</span>
@@ -351,7 +351,7 @@
 <span class="va">den</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/density.html">density</a></span><span class="op">(</span><span class="va">lcpm</span><span class="op">[</span>,<span class="va">i</span><span class="op">]</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">den</span><span class="op">$</span><span class="va">x</span>, <span class="va">den</span><span class="op">$</span><span class="va">y</span>, col<span class="op">=</span><span class="va">col</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, lwd<span class="op">=</span><span class="fl">2</span><span class="op">)</span>
 <span class="op">}</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="va">samplenames</span>, text.col<span class="op">=</span><span class="va">col</span>, bty<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="va">samplenames</span>, text.col<span class="op">=</span><span class="va">col</span>, bty<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_CN_files/figure-html/filterplot1-1.png" alt="每个样本过滤前的原始数据（A）和过滤后（B）的数据的log-CPM值密度。竖直虚线标出了过滤步骤中所用阈值（相当于CPM值为约0.2）。" width="768"><p class="caption">
 每个样本过滤前的原始数据（A）和过滤后（B）的数据的log-CPM值密度。竖直虚线标出了过滤步骤中所用阈值（相当于CPM值为约0.2）。
@@ -364,29 +364,29 @@
 <p>在样品制备或测序过程中，不具备生物学意义的外部因素会影响单个样品的表达。比如说，在实验中第一批制备的样品会总体上表达高于第二批制备的样品。差异表达分析假设所有样品表达值的范围和分布都应当相似。我们需要进行归一化来确保整个实验中每个样本的表达分布都相似。</p>
 <p>密度图和箱线图等展示每个样品基因表达量分布的图表可以用于判断是否有样品和其他样品分布有差异。在此数据集中，所有样品的log-CPM分布都很相似（上图B部分）。</p>
 <p>尽管如此，我们依然需要使用<strong>edgeR</strong>中的<code>calcNormFactors</code>函数，用TMM<span class="citation">(Robinson and Oshlack 2010)</span>方法进行归一化。此处计算得到的归一化系数被用作文库大小的缩放系数。当我们使用DGEList对象时，这些归一化系数被自动存储在<code>x$samples$norm.factors</code>。对此数据集而言，TMM归一化的作用比较温和，这体现在所有的缩放因子都相对接近1。</p>
-<div class="sourceCode" id="cb28"><pre class="downlit">
-<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html">calcNormFactors</a></span><span class="op">(</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"TMM"</span><span class="op">)</span>
-<span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span></pre></div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html">calcNormFactors</a></span><span class="op">(</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"TMM"</span><span class="op">)</span>
+<span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span></code></pre></div>
 <pre><code>## [1] 0.894 1.025 1.046 1.046 1.016 0.922 0.996 1.086 0.984</code></pre>
 <p>在这里，为了更好地展示出归一化的效果，我们复制了数据并进行了人工调整，使得第一个样品的计数减少到了其原始值的5%，而第二个样品增大到了5倍。要注意在实际的数据分析流程中，不应当进行这样的操作。</p>
-<div class="sourceCode" id="cb30"><pre class="downlit">
-<span class="va">x2</span> <span class="op">&lt;-</span> <span class="va">x</span>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x2</span> <span class="op">&lt;-</span> <span class="va">x</span>
 <span class="va">x2</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span> <span class="op">&lt;-</span> <span class="fl">1</span>
 <span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">ceiling</a></span><span class="op">(</span><span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">*</span><span class="fl">0.05</span><span class="op">)</span>
-<span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">*</span><span class="fl">5</span></pre></div>
+<span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">x2</span><span class="op">$</span><span class="va">counts</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">*</span><span class="fl">5</span></code></pre></div>
 <p>下图显示了没有经过归一化的与经过了归一化的数据的表达分布，其中归一化前不同样本的分布明显不同，而归一化后比较相似。此处，经过我们人工调整的第一个样品的TMM缩放系数0.06非常小，而第二个样品的缩放系数6.08很大，它们都并不接近1。</p>
-<div class="sourceCode" id="cb31"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x2</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">lcpm</span>, las<span class="op">=</span><span class="fl">2</span>, col<span class="op">=</span><span class="va">col</span>, main<span class="op">=</span><span class="st">""</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"A. Example: Unnormalised data"</span>,ylab<span class="op">=</span><span class="st">"Log-cpm"</span><span class="op">)</span>
 <span class="va">x2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/calcNormFactors.html">calcNormFactors</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span>  
-<span class="va">x2</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span></pre></div>
+<span class="va">x2</span><span class="op">$</span><span class="va">samples</span><span class="op">$</span><span class="va">norm.factors</span></code></pre></div>
 <pre><code>## [1] 0.0577 6.0829 1.2202 1.1648 1.1966 1.0466 1.1505 1.2543 1.1090</code></pre>
-<div class="sourceCode" id="cb33"><pre class="downlit">
-<span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x2</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x2</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">lcpm</span>, las<span class="op">=</span><span class="fl">2</span>, col<span class="op">=</span><span class="va">col</span>, main<span class="op">=</span><span class="st">""</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"B. Example: Normalised data"</span>,ylab<span class="op">=</span><span class="st">"Log-cpm"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"B. Example: Normalised data"</span>,ylab<span class="op">=</span><span class="st">"Log-cpm"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_CN_files/figure-html/plotmodifieddata-1.png" alt="样例数据：log-CPM值的箱线图展示了未经归一化的数据（A）及归一化后的数据（B）中每个样本的表达分布。数据集经过调整，样本1和2中的表达计数分别被缩放到其原始值的5%和500%。" width="768"><p class="caption">
 样例数据：log-CPM值的箱线图展示了未经归一化的数据（A）及归一化后的数据（B）中每个样本的表达分布。数据集经过调整，样本1和2中的表达计数分别被缩放到其原始值的5%和500%。
@@ -401,8 +401,8 @@
 <p>在这个数据集中，可以看出样本在维度1和2能很好地按照实验分组聚类，随后在维度3按照测序泳道（样品批次）分离（如下图所示）。由于第一维度解释了数据中最大比例的方差，我们会发现当关注更高维度时，维度上的取值范围会变小。</p>
 <p>尽管所有样本都按组聚类，在维度1上最大的转录差异出现在basal和LP以及basal和ML之间。因此，预期在basal样品与其他之间的成对比较中能够得到大量的DE基因，而在ML和LP之间的比较中得到的DE基因数量略少。在其他的数据集中，不按照实验组聚类的样本可能在下游分析中只表现出较小的或不表现出差异表达。</p>
 <p>为绘制MDS图，我们为不同的因子设立不同的配色。维度1和2以细胞类型上色，而维度3和4以测序泳道（批次）上色。</p>
-<div class="sourceCode" id="cb34"><pre class="downlit">
-<span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">lcpm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/edgeR/man/cpm.html">cpm</a></span><span class="op">(</span><span class="va">x</span>, log<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="va">col.group</span> <span class="op">&lt;-</span> <span class="va">group</span>
 <span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">col.group</span><span class="op">)</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nlevels.html">nlevels</a></span><span class="op">(</span><span class="va">col.group</span><span class="op">)</span>, <span class="st">"Set1"</span><span class="op">)</span>
@@ -413,16 +413,16 @@
 <span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotMDS.html">plotMDS</a></span><span class="op">(</span><span class="va">lcpm</span>, labels<span class="op">=</span><span class="va">group</span>, col<span class="op">=</span><span class="va">col.group</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"A. Sample groups"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotMDS.html">plotMDS</a></span><span class="op">(</span><span class="va">lcpm</span>, labels<span class="op">=</span><span class="va">lane</span>, col<span class="op">=</span><span class="va">col.lane</span>, dim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"B. Sequencing lanes"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main<span class="op">=</span><span class="st">"B. Sequencing lanes"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_CN_files/figure-html/MDS1-1.png" alt="以样品分组上色并标记的log-CPM值在维度1和2的MDS图（A）和以测序泳道上色并标记的维度3和4的MDS图（B）。图中的距离对应于领先倍数变化（leading fold-change），默认情况下也就是前500个在每对样品之间差异最大的基因的平均（均方根）log2倍数变化。" width="768"><p class="caption">
 以样品分组上色并标记的log-CPM值在维度1和2的MDS图（A）和以测序泳道上色并标记的维度3和4的MDS图（B）。图中的距离对应于领先倍数变化（leading fold-change），默认情况下也就是前500个在每对样品之间差异最大的基因的平均（均方根）log2倍数变化。
 </p>
 </div>
 <p>作为另一种绘制MDS图的方式，<strong>Glimma</strong>包提供了便于探索多个维度的交互式MDS图。其中的<code>glMDSPlot</code>函数可生成一个html网页（如果设置<code>launch=TRUE</code>参数，将会在生成后直接在浏览器中打开），其左侧面板含有一张MDS图，而右侧面板包含一张展示了各个维度所解释的方差比例的柱形图。点击柱形图中的柱可切换MDS图绘制时所使用的维度，且将鼠标悬浮于单个点上可显示相应的样本标签。也可切换配色方案，以突显不同细胞类型或测序泳道（批次）。此数据集的交互式MDS图可以从<a href="http://bioinf.wehi.edu.au/folders/limmaWorkflow/glimma-plots/MDS-Plot.html">http://bioinf.wehi.edu.au/folders/limmaWorkflow/glimma-plots/MDS-Plot.html</a>看到。</p>
-<div class="sourceCode" id="cb35"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/Glimma/man/glMDSPlot.html">glMDSPlot</a></span><span class="op">(</span><span class="va">lcpm</span>, labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">group</span>, <span class="va">lane</span>, sep<span class="op">=</span><span class="st">"_"</span><span class="op">)</span>, 
-          groups<span class="op">=</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span>, launch<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/Glimma/man/glMDSPlot.html">glMDSPlot</a></span><span class="op">(</span><span class="va">lcpm</span>, labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">group</span>, <span class="va">lane</span>, sep<span class="op">=</span><span class="st">"_"</span><span class="op">)</span>, 
+          groups<span class="op">=</span><span class="va">x</span><span class="op">$</span><span class="va">samples</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span>, launch<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><a href="glimma-plots/MDS-Plot.html">交互式MDS图链接</a></p>
 </div>
 </div>
@@ -433,10 +433,10 @@
 <h2 class="hasAnchor">
 <a href="#%E5%88%9B%E5%BB%BA%E8%AE%BE%E8%AE%A1%E7%9F%A9%E9%98%B5%E5%92%8C%E5%AF%B9%E6%AF%94" class="anchor"></a>创建设计矩阵和对比</h2>
 <p>在此研究中，我们想知道哪些基因在我们研究的三组细胞之间以不同水平表达。我们的分析中所用到的线性模型假设数据是正态分布的。首先，我们要创建一个包含细胞类型以及测序泳道（批次）信息的设计矩阵。</p>
-<div class="sourceCode" id="cb36"><pre class="downlit">
-<span class="va">design</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span><span class="op">(</span><span class="op">~</span><span class="fl">0</span><span class="op">+</span><span class="va">group</span><span class="op">+</span><span class="va">lane</span><span class="op">)</span>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">design</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span><span class="op">(</span><span class="op">~</span><span class="fl">0</span><span class="op">+</span><span class="va">group</span><span class="op">+</span><span class="va">lane</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">design</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">"group"</span>, <span class="st">""</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">design</span><span class="op">)</span><span class="op">)</span>
-<span class="va">design</span></pre></div>
+<span class="va">design</span></code></pre></div>
 <pre><code>##   Basal LP ML laneL006 laneL008
 ## 1     0  1  0        0        0
 ## 2     0  0  1        0        0
@@ -456,13 +456,13 @@
 ## attr(,"contrasts")$lane
 ## [1] "contr.treatment"</code></pre>
 <p>对于一个给定的实验，通常有多种等价的方法都能用来创建合适的设计矩阵。 比如说，<code>~0+group+lane</code>去除了第一个因子<code>group</code>的截距，但第二个因子<code>lane</code>的截距被保留。 此外也可以使用<code>~group+lane</code>，来自<code>group</code>和<code>lane</code>的截距均被保留。 理解如何解释模型中估计的系数是创建合适的设计矩阵的关键。 我们在此分析中选取第一种模型，因为在没有<code>group</code>的截距的情况下能更直截了当地设定模型中的对比。用于细胞群之间成对比较的对比可以在<strong>limma</strong>中用<code>makeContrasts</code>函数设定。</p>
-<div class="sourceCode" id="cb38"><pre class="downlit">
-<span class="va">contr.matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/makeContrasts.html">makeContrasts</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">contr.matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/makeContrasts.html">makeContrasts</a></span><span class="op">(</span>
    BasalvsLP <span class="op">=</span> <span class="va">Basal</span><span class="op">-</span><span class="va">LP</span>, 
    BasalvsML <span class="op">=</span> <span class="va">Basal</span> <span class="op">-</span> <span class="va">ML</span>, 
    LPvsML <span class="op">=</span> <span class="va">LP</span> <span class="op">-</span> <span class="va">ML</span>, 
    levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">design</span><span class="op">)</span><span class="op">)</span>
-<span class="va">contr.matrix</span></pre></div>
+<span class="va">contr.matrix</span></code></pre></div>
 <pre><code>##           Contrasts
 ## Levels     BasalvsLP BasalvsML LPvsML
 ##   Basal            1         1      0
@@ -480,10 +480,10 @@
 <p>下图左侧展示了这个数据集log-CPM值的均值-方差关系。通常而言，方差是测序实验操作中的技术差异和来自不同细胞类群的重复样本之间的生物学差异的结合，而<em>voom图</em>会显示出一个在均值与方差之间递减的趋势。 生物学差异高的实验通常会有更平坦的趋势，其方差值在高表达处稳定。生物学差异低的实验更倾向于急剧下降的趋势。</p>
 <p>不仅如此，voom图也提供了对于上游所进行的过滤水平的可视化检测。如果对于低表达基因的过滤不够充分，在图上表达低的一端，受到非常低的表达计数的影响，会出现方差的下降。如果观察到了这种情况，应当回到最初的过滤步骤并提高用于该数据集的表达阈值。</p>
 <p>当先前绘制的MDS图中发现组内重复样本的聚集与分离程度出现明显的差异时，可以用<code>voomWithQualityWeights</code>函数<span class="citation">(Liu et al. 2015)</span>来代替<code>voom</code>，在计算基因权重值以外还能计算每个样本的权重值。关于使用此种方式的例子参见Liu等(2016) <span class="citation">(Liu et al. 2016)</span>。</p>
-<div class="sourceCode" id="cb40"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="va">v</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/voom.html">voom</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">design</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
-<span class="va">v</span></pre></div>
+<span class="va">v</span></code></pre></div>
 <pre><code>## An object of class "EList"
 ## $genes
 ##   ENTREZID SYMBOL TXCHROM
@@ -544,11 +544,11 @@
 ## 
 ## attr(,"contrasts")$lane
 ## [1] "contr.treatment"</code></pre>
-<div class="sourceCode" id="cb42"><pre class="downlit">
-<span class="va">vfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/lmFit.html">lmFit</a></span><span class="op">(</span><span class="va">v</span>, <span class="va">design</span><span class="op">)</span>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">vfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/lmFit.html">lmFit</a></span><span class="op">(</span><span class="va">v</span>, <span class="va">design</span><span class="op">)</span>
 <span class="va">vfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/contrasts.fit.html">contrasts.fit</a></span><span class="op">(</span><span class="va">vfit</span>, contrasts<span class="op">=</span><span class="va">contr.matrix</span><span class="op">)</span>
 <span class="va">efit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/ebayes.html">eBayes</a></span><span class="op">(</span><span class="va">vfit</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotSA.html">plotSA</a></span><span class="op">(</span><span class="va">efit</span>, main<span class="op">=</span><span class="st">"Final model: Mean-variance trend"</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotSA.html">plotSA</a></span><span class="op">(</span><span class="va">efit</span>, main<span class="op">=</span><span class="st">"Final model: Mean-variance trend"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_CN_files/figure-html/voom-1.png" alt="图中绘制了每个基因的均值（x轴）和方差（y轴），显示了在该数据上使用`voom`前它们之间的相关性（左），以及当运用`voom`的权重后这种趋势是如何消除的（右）。左侧的图是使用`voom`函数绘制的，它为log-CPM转换后的数据拟合线性模型并提取残差方差。然后，对方差取四次方根（或对标准差取平方根），并相对每个基因的平均表达作图。均值通过平均计数加上2再进行log2转换计算得到。右侧的图使用`plotSA`绘制了log2残差标准差与log-CPM均值的关系。在这两幅图中，每个黑点表示一个基因。左侧图中，红色曲线展示了用于计算voom权重的估算所得的均值-方差趋势。右侧图中，由经验贝叶斯算法得到的平均log2残差标准差由水平蓝线标出。 " width="768"><p class="caption">
 图中绘制了每个基因的均值（x轴）和方差（y轴），显示了在该数据上使用<code>voom</code>前它们之间的相关性（左），以及当运用<code>voom</code>的权重后这种趋势是如何消除的（右）。左侧的图是使用<code>voom</code>函数绘制的，它为log-CPM转换后的数据拟合线性模型并提取残差方差。然后，对方差取四次方根（或对标准差取平方根），并相对每个基因的平均表达作图。均值通过平均计数加上2再进行log2转换计算得到。右侧的图使用<code>plotSA</code>绘制了log2残差标准差与log-CPM均值的关系。在这两幅图中，每个黑点表示一个基因。左侧图中，红色曲线展示了用于计算voom权重的估算所得的均值-方差趋势。右侧图中，由经验贝叶斯算法得到的平均log2残差标准差由水平蓝线标出。
@@ -565,50 +565,50 @@
 <h2 class="hasAnchor">
 <a href="#%E6%A3%80%E6%9F%A5de%E5%9F%BA%E5%9B%A0%E6%95%B0%E9%87%8F" class="anchor"></a>检查DE基因数量</h2>
 <p>为快速查看表达差异水平，显著上调或下调的基因可以汇总到一个表格中。显著性的判断使用默认的校正<em>p</em>值阈值，即5%。在basal与LP的表达水平之间的比较中，发现了4648个在basal中相较于LP下调的基因，和4863个在basal中相较于LP上调的基因，即共9511个差异表达基因。在basal和ML之间发现了一共9598个差异表达基因（4927个下调基因和4671个上调基因），而在LP和ML中发现了一共5652个差异表达基因（3135个下调基因和2517个上调基因）。在basal类群所参与的比较中皆找到了大量的差异表达基因，这与我们在MDS图中观察到的结果相吻合。</p>
-<div class="sourceCode" id="cb43"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/limma/man/decideTests.html">decideTests</a></span><span class="op">(</span><span class="va">efit</span><span class="op">)</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/limma/man/decideTests.html">decideTests</a></span><span class="op">(</span><span class="va">efit</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>##        BasalvsLP BasalvsML LPvsML
 ## Down        4648      4927   3135
 ## NotSig      7113      7026  10972
 ## Up          4863      4671   2517</code></pre>
 <p>在某些时候，不仅仅需要用到校正<em>p</em>值阈值，还需要差异倍数的对数（log-FCs）也高于某个最小值来更为严格地定义显著性。<em>treat</em>方法<span class="citation">(McCarthy and Smyth 2009)</span>可以按照对最小log-FC值的要求，使用经过经验贝叶斯调整的<em>t</em>统计值计算<em>p</em>值。当我们要求差异表达基因的log-FC显著大于1（等同于不同细胞类群之间表达量差两倍）并对此进行检验时，差异表达基因的数量得到了下降，basal与LP相比只有3684个差异表达基因，basal与ML相比只有3834个差异表达基因，LP与ML相比只有414个差异表达基因。</p>
-<div class="sourceCode" id="cb45"><pre class="downlit">
-<span class="va">tfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/ebayes.html">treat</a></span><span class="op">(</span><span class="va">vfit</span>, lfc<span class="op">=</span><span class="fl">1</span><span class="op">)</span>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">tfit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/ebayes.html">treat</a></span><span class="op">(</span><span class="va">vfit</span>, lfc<span class="op">=</span><span class="fl">1</span><span class="op">)</span>
 <span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/decideTests.html">decideTests</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></code></pre></div>
 <pre><code>##        BasalvsLP BasalvsML LPvsML
 ## Down        1632      1777    224
 ## NotSig     12976     12790  16210
 ## Up          2016      2057    190</code></pre>
 <p>在多个对比中皆差异表达的基因可以从<code>decideTests</code>的结果中提取，其中的0代表不差异表达的基因，1代表上调的基因，-1代表下调的基因。共有2784个基因在basal和LP以及basal和ML的比较中都差异表达，其中的20个于下方列出。<code>write.fit</code>函数可用于将三个比较的结果一起提取并写入一个输出文件。</p>
-<div class="sourceCode" id="cb47"><pre class="downlit">
-<span class="va">de.common</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">!=</span><span class="fl">0</span> <span class="op">&amp;</span> <span class="va">dt</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">!=</span><span class="fl">0</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">de.common</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">de.common</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">!=</span><span class="fl">0</span> <span class="op">&amp;</span> <span class="va">dt</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">!=</span><span class="fl">0</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">de.common</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 2784</code></pre>
-<div class="sourceCode" id="cb49"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">$</span><span class="va">genes</span><span class="op">$</span><span class="va">SYMBOL</span><span class="op">[</span><span class="va">de.common</span><span class="op">]</span>, n<span class="op">=</span><span class="fl">20</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">$</span><span class="va">genes</span><span class="op">$</span><span class="va">SYMBOL</span><span class="op">[</span><span class="va">de.common</span><span class="op">]</span>, n<span class="op">=</span><span class="fl">20</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] "Xkr4"          "Rgs20"         "Cpa6"          "A830018L16Rik" "Sulf1"        
 ##  [6] "Eya1"          "Msc"           "Sbspon"        "Pi15"          "Crispld1"     
 ## [11] "Kcnq5"         "Rims1"         "Khdrbs2"       "Ptpn18"        "Prss39"       
-## [16] "Arhgef4"       "Cnga3"         "2010300C02Rik" "Aff3"          "Npas2"</code></pre>
-<div class="sourceCode" id="cb51"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/venn.html">vennDiagram</a></span><span class="op">(</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>, circle.col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"turquoise"</span>, <span class="st">"salmon"</span><span class="op">)</span><span class="op">)</span></pre></div>
+## [16] "Arhgef4"       "Cnga3"         "Cracdl"        "Aff3"          "Npas2"</code></pre>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/limma/man/venn.html">vennDiagram</a></span><span class="op">(</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>, circle.col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"turquoise"</span>, <span class="st">"salmon"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_CN_files/figure-html/venn-1.png" alt="韦恩图展示了仅basal和LP（左）、仅basal和ML（右）的对比的DE基因数量，还有两种对比中共同的DE基因数量（中）。在任何对比中均不差异表达的基因数量标于右下。" width="576"><p class="caption">
 韦恩图展示了仅basal和LP（左）、仅basal和ML（右）的对比的DE基因数量，还有两种对比中共同的DE基因数量（中）。在任何对比中均不差异表达的基因数量标于右下。
 </p>
 </div>
-<div class="sourceCode" id="cb52"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/writefit.html">write.fit</a></span><span class="op">(</span><span class="va">tfit</span>, <span class="va">dt</span>, file<span class="op">=</span><span class="st">"results.txt"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/limma/man/writefit.html">write.fit</a></span><span class="op">(</span><span class="va">tfit</span>, <span class="va">dt</span>, file<span class="op">=</span><span class="st">"results.txt"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="从头到尾检查单个de基因" class="section level2">
 <h2 class="hasAnchor">
 <a href="#%E4%BB%8E%E5%A4%B4%E5%88%B0%E5%B0%BE%E6%A3%80%E6%9F%A5%E5%8D%95%E4%B8%AAde%E5%9F%BA%E5%9B%A0" class="anchor"></a>从头到尾检查单个DE基因</h2>
 <p>使用<code>topTreat</code>函数可以列举出使用<code>treat</code>得到的结果中靠前的DE基因（对于<code>eBayes</code>的结果则应使用<code>topTable</code>函数）。默认情况下，<code>topTreat</code>将基因按照经过多重假设检验校正的<em>p</em>值从小到大排列，并为每个基因给出相关的基因信息、log-FC、平均log-CPM、校正<em>t</em>值、原始及校正<em>p</em>值。列出前多少个基因的数量可由用户设定，如果设为<code>n=Inf</code>则会包括所有的基因。基因<em>Cldn7</em>和<em>Rasef</em>在basal与LP和basal于ML的比较中都位于DE基因的前几名。</p>
-<div class="sourceCode" id="cb53"><pre class="downlit">
-<span class="va">basal.vs.lp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/toptable.html">topTreat</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">1</span>, n<span class="op">=</span><span class="cn">Inf</span><span class="op">)</span>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">basal.vs.lp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/toptable.html">topTreat</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">1</span>, n<span class="op">=</span><span class="cn">Inf</span><span class="op">)</span>
 <span class="va">basal.vs.ml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/toptable.html">topTreat</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">2</span>, n<span class="op">=</span><span class="cn">Inf</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">basal.vs.lp</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">basal.vs.lp</span><span class="op">)</span></code></pre></div>
 <pre><code>##        ENTREZID SYMBOL TXCHROM logFC AveExpr     t  P.Value adj.P.Val
 ## 12759     12759    Clu   chr14 -5.46    8.86 -33.6 1.72e-10  1.71e-06
 ## 53624     53624  Cldn7   chr11 -5.53    6.30 -32.0 2.58e-10  1.71e-06
@@ -616,8 +616,8 @@
 ## 67451     67451   Pkp2   chr16 -5.74    4.42 -29.9 4.58e-10  1.74e-06
 ## 228543   228543   Rhov    chr2 -6.26    5.49 -29.1 5.78e-10  1.74e-06
 ## 70350     70350  Basp1   chr15 -6.08    5.25 -28.3 7.27e-10  1.74e-06</code></pre>
-<div class="sourceCode" id="cb55"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">basal.vs.ml</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">basal.vs.ml</span><span class="op">)</span></code></pre></div>
 <pre><code>##        ENTREZID  SYMBOL TXCHROM logFC AveExpr     t  P.Value adj.P.Val
 ## 242505   242505   Rasef    chr4 -6.53    5.12 -35.1 1.23e-10  1.24e-06
 ## 53624     53624   Cldn7   chr11 -5.50    6.30 -31.7 2.77e-10  1.24e-06
@@ -630,13 +630,13 @@
 <h2 class="hasAnchor">
 <a href="#%E5%AE%9E%E7%94%A8%E7%9A%84%E5%B7%AE%E5%BC%82%E8%A1%A8%E8%BE%BE%E7%BB%93%E6%9E%9C%E5%8F%AF%E8%A7%86%E5%8C%96" class="anchor"></a>实用的差异表达结果可视化</h2>
 <p>为可视化地总结所有基因的结果，可使用<code>plotMD</code>函数绘制均值-差异关系（MD）图，其中展示了线性模型拟合所得到的每个基因log-FC与log-CPM平均值间的关系，而差异表达的基因会被重点标出。</p>
-<div class="sourceCode" id="cb57"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotMD.html">plotMD</a></span><span class="op">(</span><span class="va">tfit</span>, column<span class="op">=</span><span class="fl">1</span>, status<span class="op">=</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, 
-       xlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">8</span>,<span class="fl">13</span><span class="op">)</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/limma/man/plotMD.html">plotMD</a></span><span class="op">(</span><span class="va">tfit</span>, column<span class="op">=</span><span class="fl">1</span>, status<span class="op">=</span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, 
+       xlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">8</span>,<span class="fl">13</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><strong>Glimma</strong>的<code>glMDPlot</code>函数提供了交互式的均值-差异图，拓展了这种图表的功能。此函数的输出为一个html页面，左侧面板为结果的总结性图表（与<code>plotMD</code>的输出类似），右侧面板展示了各个样本的log-CPM值，而下方面板为结果的汇总表。这使得用户可以使用提供的注释中的信息（比如基因符号）搜索特定基因，而这在<strong>R</strong>统计图中是做不到的。 <!-- `glMDPlot`函数不仅限于均值-差异图，其默认版本允许读入数据框，而用户可以选择在左侧面板绘图所用的列。 --></p>
-<div class="sourceCode" id="cb58"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/Glimma/man/glMDPlot.html">glMDPlot</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">1</span>, status<span class="op">=</span><span class="va">dt</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,
-         side.main<span class="op">=</span><span class="st">"ENTREZID"</span>, counts<span class="op">=</span><span class="va">lcpm</span>, groups<span class="op">=</span><span class="va">group</span>, launch<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/Glimma/man/glMDPlot.html">glMDPlot</a></span><span class="op">(</span><span class="va">tfit</span>, coef<span class="op">=</span><span class="fl">1</span>, status<span class="op">=</span><span class="va">dt</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">tfit</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,
+         side.main<span class="op">=</span><span class="st">"ENTREZID"</span>, counts<span class="op">=</span><span class="va">lcpm</span>, groups<span class="op">=</span><span class="va">group</span>, launch<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><a href="glimma-plots/MD-Plot.html">交互式MD图链接</a></p>
 <div class="figure">
 <img src="glMDplot.png" alt=""><p class="caption">使用<strong>Glimma</strong>生成的均值-差异图。左侧面板显示了总结性数据（log-FC与log-CPM值的关系），其中选中的基因在每个样本中的数值显示于右侧面板。下方为结果的表格，其搜索框使用户得以使用可行的注释信息查找某个特定基因，如基因符号<em>Clu</em>。</p>
@@ -644,15 +644,15 @@
 <p>上方指令生成的均值-差异图可以在线访问（详见<a href="http://bioinf.wehi.edu.au/folders/limmaWorkflow/glimma-plots/MD-Plot.html">http://bioinf.wehi.edu.au/folders/limmaWorkflow/glimma-plots/MD-Plot.html</a>）。<strong>Glimma</strong>提供的交互性使得单个图形窗口内能够呈现出额外的信息。 <strong>Glimma</strong>是以<strong>R</strong>和Javascript实现的，使用<strong>R</strong>代码生成数据，并在之后使用Javascript库D3（<a href="https://d3js.org">https://d3js.org</a>）转换为图形，使用Bootstrap库处理界面并生成互动性可搜索的表格的数据表。这使得图表可以在任意当代浏览器中直接查看而无需后段服务器时刻运行，对于将其作为关联文件附加在Rmarkdown分析报告中而言非常方便。</p>
 <p>前文所展示的图表中，一些仅展示了在任意一个条件下表达的所有基因而缺少单个基因的具体信息（比如不同对比中共同差异表达基因的韦恩图或均值-差异图），而另一些仅展示单个基因（交互式均值-差异图右边面板中所展示的log-CPM值）。而热图使用户得以查看某一小组基因的表达情况，既便于查看单个组或样本的表达，又不至于在关注于单个基因时失去对于整体的注意，也不会造成由于对上千个基因取平均值而导致的分辨率丢失。</p>
 <p>使用<strong>gplots</strong>包的<code>heatmap.2</code>函数，我们为basal与LP的对照中前100个差异表达基因（按校正p值排序）绘制了一幅热图。此热图中正确地将样本按照细胞类型聚类，并重新排序了基因，表达相似的基因形成了块状。从热图中，我们发现basal与LP之间的前100个差异表达基因在ML和LP样本中的表达非常相似。</p>
-<div class="sourceCode" id="cb59"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/talgalili/gplots">gplots</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/talgalili/gplots">gplots</a></span><span class="op">)</span>
 <span class="va">basal.vs.lp.topgenes</span> <span class="op">&lt;-</span> <span class="va">basal.vs.lp</span><span class="op">$</span><span class="va">ENTREZID</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">]</span>
 <span class="va">i</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">v</span><span class="op">$</span><span class="va">genes</span><span class="op">$</span><span class="va">ENTREZID</span> <span class="op">%in%</span> <span class="va">basal.vs.lp.topgenes</span><span class="op">)</span>
 <span class="va">mycol</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/gplots/man/colorpanel.html">colorpanel</a></span><span class="op">(</span><span class="fl">1000</span>,<span class="st">"blue"</span>,<span class="st">"white"</span>,<span class="st">"red"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/gplots/man/heatmap.2.html">heatmap.2</a></span><span class="op">(</span><span class="va">lcpm</span><span class="op">[</span><span class="va">i</span>,<span class="op">]</span>, scale<span class="op">=</span><span class="st">"row"</span>,
    labRow<span class="op">=</span><span class="va">v</span><span class="op">$</span><span class="va">genes</span><span class="op">$</span><span class="va">SYMBOL</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, labCol<span class="op">=</span><span class="va">group</span>, 
    col<span class="op">=</span><span class="va">mycol</span>, trace<span class="op">=</span><span class="st">"none"</span>, density.info<span class="op">=</span><span class="st">"none"</span>, 
-   margin<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">6</span><span class="op">)</span>, lhei<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">10</span><span class="op">)</span>, dendrogram<span class="op">=</span><span class="st">"column"</span><span class="op">)</span></pre></div>
+   margin<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">6</span><span class="op">)</span>, lhei<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">10</span><span class="op">)</span>, dendrogram<span class="op">=</span><span class="st">"column"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_CN_files/figure-html/heatmap-1.png" alt="在basal和LP的对比中前100个DE基因log-CPM值的热图。经过缩放调整后，每个基因（每行）的表达均值为0，并且标准差为1。给定基因相对高表达的样本被标记为红色，相对低表达的样本被标记为蓝色。浅色和白色代表中等表达水平的基因。样本和基因已通过分层聚类的方法重新排序。图中显示有样本聚类的树状图。" width="480"><p class="caption">
 在basal和LP的对比中前100个DE基因log-CPM值的热图。经过缩放调整后，每个基因（每行）的表达均值为0，并且标准差为1。给定基因相对高表达的样本被标记为红色，相对低表达的样本被标记为蓝色。浅色和白色代表中等表达水平的基因。样本和基因已通过分层聚类的方法重新排序。图中显示有样本聚类的树状图。
@@ -664,29 +664,29 @@
 <h1 class="hasAnchor">
 <a href="#%E4%BD%BF%E7%94%A8camera%E7%9A%84%E5%9F%BA%E5%9B%A0%E9%9B%86%E6%A3%80%E9%AA%8C" class="anchor"></a>使用camera的基因集检验</h1>
 <p>在此次分析的最后，我们要进行一些基因集检验。为此，我们将<em>camera</em>方法<span class="citation">(Wu and Smyth 2012)</span>应用于Broad Institute的MSigDB c2中的<span class="citation">(Subramanian et al. 2005)</span>中适应小鼠的<em>c2</em>基因表达特征，这可从<a href="http://bioinf.wehi.edu.au/software/MSigDB/">http://bioinf.wehi.edu.au/software/MSigDB/</a>以RData对象格式获取。 此外，对于人类和小鼠，来自MSigDB的其他有用的基因集也可从此网站获取，比如标志（hallmark）基因集。C2基因集的内容收集自在线数据库、出版物以及该领域专家，而标志基因集的内容来自MSigDB，从而获得具有明确定义的生物状态或过程。</p>
-<div class="sourceCode" id="cb60"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"mouse_c2_v5p1.rda"</span>, package <span class="op">=</span> <span class="st">"RNAseq123"</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"mouse_c2_v5p1.rda"</span>, package <span class="op">=</span> <span class="st">"RNAseq123"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">idx</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/ids2indices.html">ids2indices</a></span><span class="op">(</span><span class="va">Mm.c2</span>,id<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">v</span><span class="op">)</span><span class="op">)</span>
 <span class="va">cam.BasalvsLP</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.BasalvsLP</span>,<span class="fl">5</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.BasalvsLP</span>,<span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>##                                             NGenes Direction   PValue      FDR
 ## LIM_MAMMARY_STEM_CELL_UP                       791        Up 1.77e-18 8.36e-15
 ## LIM_MAMMARY_STEM_CELL_DN                       683      Down 4.03e-14 8.69e-11
 ## ROSTY_CERVICAL_CANCER_PROLIFERATION_CLUSTER    170        Up 5.52e-14 8.69e-11
 ## LIM_MAMMARY_LUMINAL_PROGENITOR_UP               94      Down 2.74e-13 3.23e-10
 ## SOTIRIOU_BREAST_CANCER_GRADE_1_VS_3_UP         190        Up 5.16e-13 4.87e-10</code></pre>
-<div class="sourceCode" id="cb62"><pre class="downlit">
-<span class="va">cam.BasalvsML</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.BasalvsML</span>,<span class="fl">5</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cam.BasalvsML</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.BasalvsML</span>,<span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>##                                     NGenes Direction   PValue      FDR
 ## LIM_MAMMARY_STEM_CELL_UP               791        Up 1.68e-22 7.92e-19
 ## LIM_MAMMARY_STEM_CELL_DN               683      Down 7.79e-18 1.84e-14
 ## LIM_MAMMARY_LUMINAL_MATURE_DN          172        Up 9.74e-16 1.53e-12
 ## LIM_MAMMARY_LUMINAL_MATURE_UP          204      Down 1.15e-12 1.36e-09
 ## NAKAYAMA_SOFT_TISSUE_TUMORS_PCA2_UP    137        Up 2.24e-12 1.88e-09</code></pre>
-<div class="sourceCode" id="cb64"><pre class="downlit">
-<span class="va">cam.LPvsML</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.LPvsML</span>,<span class="fl">5</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cam.LPvsML</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/limma/man/camera.html">camera</a></span><span class="op">(</span><span class="va">v</span>,<span class="va">idx</span>,<span class="va">design</span>,contrast<span class="op">=</span><span class="va">contr.matrix</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cam.LPvsML</span>,<span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>##                                         NGenes Direction   PValue      FDR
 ## LIM_MAMMARY_LUMINAL_MATURE_DN              172        Up 6.73e-14 2.35e-10
 ## LIM_MAMMARY_LUMINAL_MATURE_UP              204      Down 9.97e-14 2.35e-10
@@ -695,9 +695,9 @@
 ## REACTOME_RNA_POL_I_PROMOTER_OPENING         46      Down 2.04e-08 1.93e-05</code></pre>
 <p><code>camera</code>函数通过比较假设检验来评估一个给定基因集中的基因是否相对于不在集内的基因而言在差异表达基因的排序中更靠前。 它使用<strong>limma</strong>的线性模型框架，并同时采用设计矩阵和对比矩阵（如果有的话），且在检验的过程中会运用到来自<em>voom</em>的权重值。 在通过基因间相关性（默认设定为0.01，但也可通过数据估计）和基因集的规模得到方差膨胀因子（variance inflation factor），并使用它调整基因集检验统计值的方差后，将会返回根据多重假设检验进行了校正的<em>p</em>值。</p>
 <p>Lim等人(2010)<span class="citation">(Lim et al. 2010)</span>使用Illumina微阵列分析了与此实验相同的分选细胞群，而我们的实验是与他们的数据集等价的RNA-seq，因此我们预期来自该早期文献的基因表达特征将会出现在每种对比的列表顶端，而结果正符合我们的预期。在LP和ML的对比中，我们为Lim等人（2010）的成熟管腔基因集（上调及下调）绘制了条码图（barcodeplot）。由于我们的对比是将LP与ML相比而不是相反，这些基因集的方向在我们的数据集中是反过来的（如果将对比反过来，基因集的方向将会与对比一致）。</p>
-<div class="sourceCode" id="cb66"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/limma/man/barcodeplot.html">barcodeplot</a></span><span class="op">(</span><span class="va">efit</span><span class="op">$</span><span class="va">t</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, index<span class="op">=</span><span class="va">idx</span><span class="op">$</span><span class="va">LIM_MAMMARY_LUMINAL_MATURE_UP</span>, 
-            index2<span class="op">=</span><span class="va">idx</span><span class="op">$</span><span class="va">LIM_MAMMARY_LUMINAL_MATURE_DN</span>, main<span class="op">=</span><span class="st">"LPvsML"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/limma/man/barcodeplot.html">barcodeplot</a></span><span class="op">(</span><span class="va">efit</span><span class="op">$</span><span class="va">t</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, index<span class="op">=</span><span class="va">idx</span><span class="op">$</span><span class="va">LIM_MAMMARY_LUMINAL_MATURE_UP</span>, 
+            index2<span class="op">=</span><span class="va">idx</span><span class="op">$</span><span class="va">LIM_MAMMARY_LUMINAL_MATURE_DN</span>, main<span class="op">=</span><span class="st">"LPvsML"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="limmaWorkflow_CN_files/figure-html/barcodeplot-1.png" alt="`LIM_MAMMARY_LUMINAL_MATURE_UP` （红色条形，图表上方）和`LIM_MAMMARY_LUMINAL_MATURE_DN`（蓝色条形，图表下方）基因集在LP和ML的对比中的条码图，每个基因集都有一条富集线展示了竖直条形在图表每部分的相对富集程度。Lim等人的实验[@Lim:BreastCancerRes:2010]与我们的非常相似，用了相同的方式分选获取细胞群，只是他们使用了微阵列而不是RNA-seq来测定基因表达。需要注意上调基因集发生下调而下调基因集发生上调的逆相关性来自于对比的设定方式（LP相比于ML），如果将其对调，方向性将会吻合。" width="576"><p class="caption">
 <code>LIM_MAMMARY_LUMINAL_MATURE_UP</code> （红色条形，图表上方）和<code>LIM_MAMMARY_LUMINAL_MATURE_DN</code>（蓝色条形，图表下方）基因集在LP和ML的对比中的条码图，每个基因集都有一条富集线展示了竖直条形在图表每部分的相对富集程度。Lim等人的实验<span class="citation">(Lim et al. 2010)</span>与我们的非常相似，用了相同的方式分选获取细胞群，只是他们使用了微阵列而不是RNA-seq来测定基因表达。需要注意上调基因集发生下调而下调基因集发生上调的逆相关性来自于对比的设定方式（LP相比于ML），如果将其对调，方向性将会吻合。
@@ -709,11 +709,11 @@
 <h1 class="hasAnchor">
 <a href="#%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%92%8C%E4%BB%A3%E7%A0%81" class="anchor"></a>使用到的软件和代码</h1>
 <p>此RNA-seq工作流程使用了Bioconductor项目3.8版本中的多个软件包，运行于<em>R</em> 3.5.1或更高版本。除了本文中着重介绍的软件（<strong>limma</strong>、<strong>Glimma</strong>以及<strong>edgeR</strong>），还用到了一些其他软件包，包括<strong>gplots</strong>和<strong>RColorBrewer</strong>还有基因注释包<strong>Mus.musculus</strong>。 此文档使用<strong>knitr</strong>编译。所有用到的包的版本号如下所示。 Bioconductor工作流程包<strong>RNAseq123</strong>（可访问<a href="https://bioconductor.org/packages/RNAseq123">https://bioconductor.org/packages/RNAseq123</a>查看）内包含此文章的英文和简体中文版以及进行此分析流程所需要的全部代码。安装此包即可安装以上提到的所有需要的包。对于RNA-seq数据分析实践培训而言，此包也是非常有用的资源。</p>
-<div class="sourceCode" id="cb67"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></pre></div>
-<pre><code>## R version 4.0.2 (2020-06-22)
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>## R version 4.1.0 (2021-05-18)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 20.04 LTS
+## Running under: Ubuntu 20.04.2 LTS
 ## 
 ## Matrix products: default
 ## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
@@ -725,117 +725,123 @@
 ## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] parallel  stats4    stats     graphics  grDevices utils     datasets  methods  
-## [9] base     
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] gplots_3.1.0                              RColorBrewer_1.1-2                       
+##  [1] gplots_3.1.1                              RColorBrewer_1.1-2                       
 ##  [3] Mus.musculus_1.3.1                        TxDb.Mmusculus.UCSC.mm10.knownGene_3.10.0
-##  [5] org.Mm.eg.db_3.11.4                       GO.db_3.11.4                             
-##  [7] OrganismDbi_1.31.1                        GenomicFeatures_1.41.3                   
-##  [9] GenomicRanges_1.41.6                      GenomeInfoDb_1.25.11                     
-## [11] AnnotationDbi_1.51.3                      IRanges_2.23.10                          
-## [13] S4Vectors_0.27.14                         Biobase_2.49.1                           
-## [15] BiocGenerics_0.35.4                       edgeR_3.31.4                             
-## [17] Glimma_1.17.2                             limma_3.45.14                            
-## [19] knitr_1.30                                BiocStyle_2.17.1                         
+##  [5] org.Mm.eg.db_3.13.0                       GO.db_3.13.0                             
+##  [7] OrganismDbi_1.35.0                        GenomicFeatures_1.45.1                   
+##  [9] GenomicRanges_1.45.0                      GenomeInfoDb_1.29.3                      
+## [11] AnnotationDbi_1.55.1                      IRanges_2.27.0                           
+## [13] S4Vectors_0.31.0                          Biobase_2.53.0                           
+## [15] BiocGenerics_0.39.1                       edgeR_3.35.0                             
+## [17] Glimma_2.3.0                              limma_3.49.4                             
+## [19] knitr_1.33                                BiocStyle_2.21.3                         
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bitops_1.0-6                matrixStats_0.57.0          fs_1.5.0                   
-##  [4] bit64_4.0.5                 progress_1.2.2              httr_1.4.2                 
-##  [7] rprojroot_1.3-2             tools_4.0.2                 backports_1.1.10           
-## [10] R6_2.4.1                    KernSmooth_2.23-17          DBI_1.1.0                  
-## [13] tidyselect_1.1.0            prettyunits_1.1.1           bit_4.0.4                  
-## [16] curl_4.3                    compiler_4.0.2              textshaping_0.1.2          
-## [19] graph_1.67.1                xml2_1.3.2                  desc_1.2.0                 
-## [22] DelayedArray_0.15.16        rtracklayer_1.49.5          bookdown_0.21              
-## [25] caTools_1.18.0              RBGL_1.65.0                 askpass_1.1                
-## [28] rappdirs_0.3.1              pkgdown_1.6.1               systemfonts_0.3.2          
-## [31] stringr_1.4.0               digest_0.6.25               Rsamtools_2.5.3            
-## [34] R.utils_2.10.1              rmarkdown_2.4               XVector_0.29.3             
-## [37] pkgconfig_2.0.3             htmltools_0.5.0             MatrixGenerics_1.1.5       
-## [40] highr_0.8                   dbplyr_1.4.4                rlang_0.4.8                
-## [43] RSQLite_2.2.1               generics_0.0.2              jsonlite_1.7.1             
-## [46] gtools_3.8.2                BiocParallel_1.23.2         R.oo_1.24.0                
-## [49] dplyr_1.0.2                 RCurl_1.98-1.2              magrittr_1.5               
-## [52] GenomeInfoDbData_1.2.4      Matrix_1.2-18               Rcpp_1.0.5                 
-## [55] R.methodsS3_1.8.1           lifecycle_0.2.0             stringi_1.5.3              
-## [58] yaml_2.2.1                  SummarizedExperiment_1.19.9 zlibbioc_1.35.0            
-## [61] BiocFileCache_1.13.1        grid_4.0.2                  blob_1.2.1                 
-## [64] crayon_1.3.4                lattice_0.20-41             Biostrings_2.57.2          
-## [67] hms_0.5.3                   locfit_1.5-9.4              pillar_1.4.6               
-## [70] biomaRt_2.45.7              XML_3.99-0.5                glue_1.4.2                 
-## [73] evaluate_0.14               BiocManager_1.30.10         vctrs_0.3.4                
-## [76] openssl_1.4.3               purrr_0.3.4                 assertthat_0.2.1           
-## [79] xfun_0.18                   ragg_0.4.0                  tibble_3.0.4               
-## [82] GenomicAlignments_1.25.3    memoise_1.1.0               ellipsis_0.3.1</code></pre>
+##   [1] colorspace_2.0-2            rjson_0.2.20                ellipsis_0.3.2             
+##   [4] rprojroot_2.0.2             XVector_0.33.0              fs_1.5.0                   
+##   [7] bit64_4.0.5                 fansi_0.5.0                 xml2_1.3.2                 
+##  [10] R.methodsS3_1.8.1           splines_4.1.0               cachem_1.0.5               
+##  [13] geneplotter_1.71.0          jsonlite_1.7.2              Rsamtools_2.9.1            
+##  [16] annotate_1.71.0             dbplyr_2.1.1                R.oo_1.24.0                
+##  [19] png_0.1-7                   graph_1.71.2                BiocManager_1.30.16        
+##  [22] compiler_4.1.0              httr_1.4.2                  assertthat_0.2.1           
+##  [25] Matrix_1.3-4                fastmap_1.1.0               htmltools_0.5.1.1          
+##  [28] prettyunits_1.1.1           tools_4.1.0                 gtable_0.3.0               
+##  [31] glue_1.4.2                  GenomeInfoDbData_1.2.6      dplyr_1.0.7                
+##  [34] rappdirs_0.3.3              Rcpp_1.0.7                  pkgdown_1.6.1              
+##  [37] vctrs_0.3.8                 Biostrings_2.61.2           rtracklayer_1.53.1         
+##  [40] xfun_0.25                   stringr_1.4.0               lifecycle_1.0.0            
+##  [43] restfulr_0.0.13             gtools_3.9.2                XML_3.99-0.7               
+##  [46] zlibbioc_1.39.0             scales_1.1.1                ragg_1.1.3                 
+##  [49] hms_1.1.0                   MatrixGenerics_1.5.3        parallel_4.1.0             
+##  [52] SummarizedExperiment_1.23.1 RBGL_1.69.0                 yaml_2.2.1                 
+##  [55] curl_4.3.2                  memoise_2.0.0               ggplot2_3.3.5              
+##  [58] biomaRt_2.49.4              stringi_1.7.3               RSQLite_2.2.7              
+##  [61] highr_0.9                   genefilter_1.75.0           BiocIO_1.3.0               
+##  [64] desc_1.3.0                  caTools_1.18.2              filelock_1.0.2             
+##  [67] BiocParallel_1.27.3         rlang_0.4.11                pkgconfig_2.0.3            
+##  [70] systemfonts_1.0.2           matrixStats_0.60.0          bitops_1.0-7               
+##  [73] evaluate_0.14               lattice_0.20-44             purrr_0.3.4                
+##  [76] GenomicAlignments_1.29.0    htmlwidgets_1.5.3           bit_4.0.4                  
+##  [79] tidyselect_1.1.1            magrittr_2.0.1              bookdown_0.23              
+##  [82] DESeq2_1.33.4               R6_2.5.0                    generics_0.1.0             
+##  [85] DelayedArray_0.19.1         DBI_1.1.1                   pillar_1.6.2               
+##  [88] survival_3.2-12             KEGGREST_1.33.0             RCurl_1.98-1.4             
+##  [91] tibble_3.1.3                crayon_1.4.1                KernSmooth_2.23-20         
+##  [94] utf8_1.2.2                  BiocFileCache_2.1.1         rmarkdown_2.10             
+##  [97] progress_1.2.2              locfit_1.5-9.4              grid_4.1.0                 
+## [100] blob_1.2.2                  digest_0.6.27               xtable_1.8-4               
+## [103] R.utils_2.10.1              textshaping_0.3.5           munsell_0.5.0</code></pre>
 </div>
 <div id="参考文献" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE" class="anchor"></a>参考文献</h1>
-<div id="refs" class="references">
-<div id="ref-orgHs:2016">
-<p>Bioconductor Core Team. 2016a. <em>Homo.sapiens: Annotation package for the Homo.sapiens object</em>. <a href="https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html">https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-orgHs:2016" class="csl-entry">
+Bioconductor Core Team. 2016a. <em><span class="nocase">Homo.sapiens: Annotation package for the Homo.sapiens object</span></em>. <a href="https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html">https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html</a>.
 </div>
-<div id="ref-orgMm:2016">
-<p>———. 2016b. <em>Mus.musculus: Annotation package for the Mus.musculus object</em>. <a href="https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html">https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html</a>.</p>
+<div id="ref-orgMm:2016" class="csl-entry">
+———. 2016b. <em><span class="nocase">Mus.musculus: Annotation package for the Mus.musculus object</span></em>. <a href="https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html">https://bioconductor.org/packages/release/data/annotation/html/Mus.musculus.html</a>.
 </div>
-<div id="ref-Durinck:Bioinf:2005">
-<p>Durinck, S., Y. Moreau, A. Kasprzyk, S. Davis, B. De Moor, A. Brazma, and W. Huber. 2005. “BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis.” <em>Bioinformatics</em> 21: 3439–40.</p>
+<div id="ref-Durinck:Bioinf:2005" class="csl-entry">
+Durinck, S., Y. Moreau, A. Kasprzyk, S. Davis, B. De Moor, A. Brazma, and W. Huber. 2005. <span>“<span class="nocase">BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis</span>.”</span> <em>Bioinformatics</em> 21: 3439–40.
 </div>
-<div id="ref-Durinck:NatureProtocols:2009">
-<p>Durinck, S., P. Spellman, E. Birney, and W. Huber. 2009. “Mapping identifiers for the integration of genomic datasets with the R/Bioconductor package biomaRt.” <em>Nature Protocols</em> 4: 1184–91.</p>
+<div id="ref-Durinck:NatureProtocols:2009" class="csl-entry">
+Durinck, S., P. Spellman, E. Birney, and W. Huber. 2009. <span>“<span class="nocase">Mapping identifiers for the integration of genomic datasets with the R/Bioconductor package biomaRt</span>.”</span> <em>Nature Protocols</em> 4: 1184–91.
 </div>
-<div id="ref-Huber:NatureMethods:2015">
-<p>Huber, W., V. J. Carey, R. Gentleman, S. Anders, M. Carlson, B. S. Carvalho, H. C. Bravo, et al. 2015. “Orchestrating High-Throughput Genomic Analysis with Bioconductor.” <em>Nature Methods</em> 12 (2): 115–21. <a href="http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html">http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html</a>.</p>
+<div id="ref-Huber:NatureMethods:2015" class="csl-entry">
+Huber, W., V. J. Carey, R. Gentleman, S. Anders, M. Carlson, B. S. Carvalho, H. C. Bravo, et al. 2015. <span>“<span>O</span>rchestrating High-Throughput Genomic Analysis with <span>B</span>ioconductor.”</span> <em>Nature Methods</em> 12 (2): 115–21. <a href="http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html">http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html</a>.
 </div>
-<div id="ref-Law:GenomeBiol:2014">
-<p>Law, C. W., Y. Chen, W. Shi, and G. K. Smyth. 2014. “Voom: Precision Weights Unlock Linear Model Analysis Tools for RNA-seq Read Counts.” <em>Genome Biology</em> 15: R29.</p>
+<div id="ref-Law:GenomeBiol:2014" class="csl-entry">
+Law, C. W., Y. Chen, W. Shi, and G. K. Smyth. 2014. <span>“<span>Voom:</span> Precision Weights Unlock Linear Model Analysis Tools for <span class="nocase">RNA-seq</span> Read Counts.”</span> <em>Genome Biology</em> 15: R29.
 </div>
-<div id="ref-Liao:NAR:2013">
-<p>Liao, Y., G. K. Smyth, and W. Shi. 2013. “The Subread Aligner: Fast, Accurate and Scalable Read Mapping by Seed-and-Vote.” <em>Nucleic Acids Res</em> 41 (10): e108.</p>
+<div id="ref-Liao:NAR:2013" class="csl-entry">
+Liao, Y., G. K. Smyth, and W. Shi. 2013. <span>“The <span>S</span>ubread Aligner: Fast, Accurate and Scalable Read Mapping by Seed-and-Vote.”</span> <em>Nucleic Acids Res</em> 41: e108.
 </div>
-<div id="ref-Liao:Bioinformatics:2014">
-<p>———. 2014. “featureCounts: an Efficient General-Purpose Program for Assigning Sequence Reads to Genomic Features.” <em>Bioinformatics</em> 30 (7): 923–30.</p>
+<div id="ref-Liao:Bioinformatics:2014" class="csl-entry">
+———. 2014. <span>“<span class="nocase">featureCounts:</span> An Efficient General-Purpose Program for Assigning Sequence Reads to Genomic Features.”</span> <em>Bioinformatics</em> 30 (7): 923–30.
 </div>
-<div id="ref-Lim:BreastCancerRes:2010">
-<p>Lim, E., D. Wu, B. Pal, T. Bouras, M. L. Asselin-Labat, F. Vaillant, H. Yagita, G. J. Lindeman, G. K. Smyth, and J. E. Visvader. 2010. “Transcriptome analyses of mouse and human mammary cell subpopulations reveal multiple conserved genes and pathways.” <em>Breast Cancer Research</em> 12 (2): R21.</p>
+<div id="ref-Lim:BreastCancerRes:2010" class="csl-entry">
+Lim, E., D. Wu, B. Pal, T. Bouras, M. L. Asselin-Labat, F. Vaillant, H. Yagita, G. J. Lindeman, G. K. Smyth, and J. E. Visvader. 2010. <span>“<span class="nocase">Transcriptome analyses of mouse and human mammary cell subpopulations reveal multiple conserved genes and pathways.</span>”</span> <em>Breast Cancer Research</em> 12 (2): R21.
 </div>
-<div id="ref-Liu:GenomicsData:2016">
-<p>Liu, R., K. Chen, N. Jansz, M. E. Blewitt, and M. E. Ritchie. 2016. “Transcriptional Profiling of the Epigenetic Regulator Smchd1.” <em>Genomics Data</em> 7: 144–7.</p>
+<div id="ref-Liu:GenomicsData:2016" class="csl-entry">
+Liu, R., K. Chen, N. Jansz, M. E. Blewitt, and M. E. Ritchie. 2016. <span>“Transcriptional Profiling of the Epigenetic Regulator <span>S</span>mchd1.”</span> <em>Genomics Data</em> 7: 144–47.
 </div>
-<div id="ref-Liu:NAR:2015">
-<p>Liu, R., A. Z. Holik, S. Su, N. Jansz, K. Chen, H. S. Leong, M. E. Blewitt, M. L. Asselin-Labat, G. K. Smyth, and M. E. Ritchie. 2015. “Why weight? Combining voom with estimates of sample quality improves power in RNA-seq analyses.” <em>Nucleic Acids Res</em> 43: e97.</p>
+<div id="ref-Liu:NAR:2015" class="csl-entry">
+Liu, R., A. Z. Holik, S. Su, N. Jansz, K. Chen, H. S. Leong, M. E. Blewitt, M. L. Asselin-Labat, G. K. Smyth, and M. E. Ritchie. 2015. <span>“<span class="nocase">Why weight? Combining voom with estimates of sample quality improves power in RNA-seq analyses.</span>”</span> <em>Nucleic Acids Res</em> 43: e97.
 </div>
-<div id="ref-McCarthy:Bioinf:2009">
-<p>McCarthy, D. J., and G. K. Smyth. 2009. “Testing significance relative to a fold-change threshold is a TREAT.” <em>Bioinformatics</em> 25: 765–71.</p>
+<div id="ref-McCarthy:Bioinf:2009" class="csl-entry">
+McCarthy, D. J., and G. K. Smyth. 2009. <span>“<span class="nocase">Testing significance relative to a fold-change threshold is a TREAT</span>.”</span> <em>Bioinformatics</em> 25: 765–71.
 </div>
-<div id="ref-Ritchie:NAR:2015">
-<p>Ritchie, M. E., B. Phipson, D. Wu, Y. Hu, C. W. Law, W. Shi, and G. K. Smyth. 2015. “limma Powers Differential Expression Analyses for RNA-Sequencing and Microarray Studies.” <em>Nucleic Acids Res</em> 43 (7): e47.</p>
+<div id="ref-Ritchie:NAR:2015" class="csl-entry">
+Ritchie, M. E., B. Phipson, D. Wu, Y. Hu, C. W. Law, W. Shi, and G. K. Smyth. 2015. <span>“<span class="nocase">limma</span> Powers Differential Expression Analyses for <span>RNA</span>-Sequencing and Microarray Studies.”</span> <em>Nucleic Acids Res</em> 43 (7): e47.
 </div>
-<div id="ref-Robinson:Bioinformatics:2010">
-<p>Robinson, M. D., D. J. McCarthy, and G. K. Smyth. 2010. “edgeR: A Bioconductor Package for Differential Expression Analysis of Digital Gene Expression Data.” <em>Bioinformatics</em> 26: 139–40.</p>
+<div id="ref-Robinson:Bioinformatics:2010" class="csl-entry">
+Robinson, M. D., D. J. McCarthy, and G. K. Smyth. 2010. <span>“<span class="nocase">edgeR</span>: A <span>Bioconductor</span> Package for Differential Expression Analysis of Digital Gene Expression Data.”</span> <em>Bioinformatics</em> 26: 139–40.
 </div>
-<div id="ref-RobinsonOshlack:GenomeBiol:2010">
-<p>Robinson, M. D., and A. Oshlack. 2010. “A Scaling Normalization Method for Differential Expression Analysis of RNA-seq data.” <em>Genome Biology</em> 11: R25.</p>
+<div id="ref-RobinsonOshlack:GenomeBiol:2010" class="csl-entry">
+Robinson, M. D., and A. Oshlack. 2010. <span>“A Scaling Normalization Method for Differential Expression Analysis of <span class="nocase">RNA-seq data</span>.”</span> <em>Genome Biology</em> 11: R25.
 </div>
-<div id="ref-Sheridan:BMCCancer:2015">
-<p>Sheridan, J. M., M. E. Ritchie, S. A. Best, K. Jiang, T. J. Beck, F. Vaillant, K. Liu, et al. 2015. “A pooled shRNA screen for regulators of primary mammary stem and progenitor cells identifies roles for Asap1 and Prox1.” <em>BMC Cancer</em> 15 (1): 221.</p>
+<div id="ref-Sheridan:BMCCancer:2015" class="csl-entry">
+Sheridan, J. M., M. E. Ritchie, S. A. Best, K. Jiang, T. J. Beck, F. Vaillant, K. Liu, et al. 2015. <span>“<span class="nocase">A pooled shRNA screen for regulators of primary mammary stem and progenitor cells identifies roles for Asap1 and Prox1</span>.”</span> <em>BMC Cancer</em> 15 (1): 221.
 </div>
-<div id="ref-Smyth:SAGMB:2004">
-<p>Smyth, G. K. 2004. “Linear Models and Empirical Bayes Methods for Assessing Differential Expression in Microarray Experiments.” <em>Stat Appl Genet Mol Biol</em> 3 (1): Article 3.</p>
+<div id="ref-Smyth:SAGMB:2004" class="csl-entry">
+Smyth, G. K. 2004. <span>“Linear Models and Empirical <span>B</span>ayes Methods for Assessing Differential Expression in Microarray Experiments.”</span> <em>Stat Appl Genet Mol Biol</em> 3 (1): Article 3.
 </div>
-<div id="ref-Glimma:2016">
-<p>Su, S., C. W. Law, C. Ah-Cann, M. L. Asselin-Labat, M. E. Blewitt, and M. E. Ritchie. 2017. “Glimma: Interactive Graphics for Gene Expression Analysis.” <em>Bioinformatics</em> 33: 2050–52.</p>
+<div id="ref-Glimma:2016" class="csl-entry">
+Su, S., C. W. Law, C. Ah-Cann, M. L. Asselin-Labat, M. E. Blewitt, and M. E. Ritchie. 2017. <span>“Glimma: Interactive Graphics for Gene Expression Analysis.”</span> <em>Bioinformatics</em> 33: 2050–52.
 </div>
-<div id="ref-Subramanianetal:PNAS:2005">
-<p>Subramanian, A., P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, et al. 2005. “Gene Set Enrichment Analysis: A Knowledge-Based Approach for Interpreting Genome-Wide Expression Profiles.” <em>Proc Natl Acad Sci U S A</em> 102 (43): 15545–50.</p>
+<div id="ref-Subramanianetal:PNAS:2005" class="csl-entry">
+Subramanian, A., P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, et al. 2005. <span>“Gene Set Enrichment Analysis: A Knowledge-Based Approach for Interpreting Genome-Wide Expression Profiles.”</span> <em>Proc Natl Acad Sci U S A</em> 102 (43): 15545–50.
 </div>
-<div id="ref-Wu:Bioinf:2010">
-<p>Wu, D., E. Lim, F. Vaillant, M. L. Asselin-Labat, J. E. Visvader, and G. K. Smyth. 2010. “ROAST: rotation gene set tests for complex microarray experiments.” <em>Bioinformatics</em> 26 (17): 2176–82.</p>
+<div id="ref-Wu:Bioinf:2010" class="csl-entry">
+Wu, D., E. Lim, F. Vaillant, M. L. Asselin-Labat, J. E. Visvader, and G. K. Smyth. 2010. <span>“<span class="nocase">ROAST: rotation gene set tests for complex microarray experiments</span>.”</span> <em>Bioinformatics</em> 26 (17): 2176–82.
 </div>
-<div id="ref-Wu:NAR:2012">
-<p>Wu, D., and G. K. Smyth. 2012. “Camera: a competitive gene set test accounting for inter-gene correlation.” <em>Nucleic Acids Res</em> 40 (17): e133.</p>
+<div id="ref-Wu:NAR:2012" class="csl-entry">
+Wu, D., and G. K. Smyth. 2012. <span>“<span class="nocase">Camera: a competitive gene set test accounting for inter-gene correlation.</span>”</span> <em>Nucleic Acids Res</em> 40 (17): e133.
 </div>
 </div>
 </div>
@@ -852,7 +858,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Charity Law, Monther Alhamdoosh, Shian Su, Xueyi Dong, Luyi Tian, Gordon Smyth, Matthew Ritchie.</p>
+  <p>Developed by Xueyi Dong, Charity Law, Monther Alhamdoosh, Shian Su, Luyi Tian, Gordon Smyth, Matthew Ritchie.</p>
 </div>
 
 <div class="pkgdown">
