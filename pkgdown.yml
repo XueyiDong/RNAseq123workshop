@@ -3,8 +3,8 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   limmaWorkflow: limmaWorkflow.html
-  limmaWorkflow_CN: limmaWorkflow_CN.html
-last_built: 2021-08-19T04:32Z
+  limmaWorkflow_Chinese: limmaWorkflow_Chinese.html
+last_built: 2021-08-23T12:38Z
 urls:
   reference: https://xueyidong.github.io/RNAseq123workshop//reference
   article: https://xueyidong.github.io/RNAseq123workshop//articles

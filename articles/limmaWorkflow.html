@@ -63,7 +63,7 @@
       <a href="../articles/limmaWorkflow.html">RNA-seq analysis is easy as 1-2-3 with limma, Glimma and edgeR</a>
     </li>
     <li>
-      <a href="../articles/limmaWorkflow_CN.html">使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌</a>
+      <a href="../articles/limmaWorkflow_Chinese.html">使用limma、Glimma和edgeR，RNA-seq数据分析易如反掌</a>
     </li>
   </ul>
 </li>
@@ -148,11 +148,9 @@
 <div id="reading-in-count-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#reading-in-count-data" class="anchor"></a>Reading in count-data</h2>
-<p>To get started with this analysis, download the file <em>GSE63310_RAW.tar</em> available online from <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file">https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file</a>, and extract the relevant files from this archive. The code below will do this, or you can do this step manually and then move on.</p>
+<p>To get started with this analysis, extract the data files from the archive file <em>GSE63310_RAW.tar</em>. The code below will do this, or you can do this step manually and then move on.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&amp;format=file"</span>
-<span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="va">url</span>, destfile<span class="op">=</span><span class="st">"GSE63310_RAW.tar"</span>, mode<span class="op">=</span><span class="st">"wb"</span><span class="op">)</span> 
-<span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/untar.html">untar</a></span><span class="op">(</span><span class="st">"GSE63310_RAW.tar"</span>, exdir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/untar.html">untar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"GSE63310_RAW.tar"</span>, package <span class="op">=</span> <span class="st">"RNAseq123workshop"</span><span class="op">)</span>, exdir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span>
 <span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GSM1545535_10_6_5_11.txt"</span>, <span class="st">"GSM1545536_9_6_5_11.txt"</span>, <span class="st">"GSM1545538_purep53.txt"</span>,
   <span class="st">"GSM1545539_JMS8-2.txt"</span>, <span class="st">"GSM1545540_JMS8-3.txt"</span>, <span class="st">"GSM1545541_JMS8-4.txt"</span>,
   <span class="st">"GSM1545542_JMS8-5.txt"</span>, <span class="st">"GSM1545544_JMS9-P7c.txt"</span>, <span class="st">"GSM1545545_JMS9-P8c.txt"</span><span class="op">)</span>
@@ -392,9 +390,9 @@ Example data: Boxplots of log-CPM values showing expression distributions for un
 </p>
 </div>
 </div>
-<div id="unsupervised-clustering-of-samples" class="section level2">
+<div id="dimensionality-reduction" class="section level2">
 <h2 class="hasAnchor">
-<a href="#unsupervised-clustering-of-samples" class="anchor"></a>Unsupervised clustering of samples</h2>
+<a href="#dimensionality-reduction" class="anchor"></a>Dimensionality reduction</h2>
 <p>In our opinion, one of the most important exploratory plots to examine for gene expression analyses is the multi-dimensional scaling (MDS) plot, or similar. The plot shows similarities and dissimilarities between samples in an unsupervised manner so that one can have an idea of the extent to which differential expression can be detected before carrying out formal tests. Ideally, samples would cluster well within the primary condition of interest, and any sample straying far from its group could be identified and followed up for sources of error or extra variation. If present, technical replicates should lie very close to one another.</p>
 <p>Such a plot can be made in <strong>limma</strong> using the <code>plotMDS</code> function. The first dimension represents the leading-fold-change that best separates samples and explains the largest proportion of variation in the data, with subsequent dimensions having a smaller effect and being orthogonal to the ones before it. When experimental design involves multiple factors, it is recommended that each factor is examined over several dimensions. If samples cluster by a given factor in any of these dimensions, it suggests that the factor contributes to expression differences and is worth including in the linear modelling. On the other hand, factors that show little or no effect may be left out of downstream analysis.</p>
 <p>In this dataset, samples can be seen to cluster well within experimental groups over dimension 1 and 2, and then separate by sequencing lane (sample batch) over dimension 3 (shown in the plot below). Keeping in mind that the first dimension explains the largest proportion of variation in the data, notice that the range of values over the dimensions become smaller as we move to higher dimensions.</p>
@@ -733,9 +731,9 @@ Barcode plot of <code>LIM_MAMMARY_LUMINAL_MATURE_UP</code> (red bars, top of plo
 ##  [5] org.Mm.eg.db_3.13.0                       GO.db_3.13.0                             
 ##  [7] OrganismDbi_1.35.0                        GenomicFeatures_1.45.1                   
 ##  [9] GenomicRanges_1.45.0                      GenomeInfoDb_1.29.3                      
-## [11] AnnotationDbi_1.55.1                      IRanges_2.27.0                           
-## [13] S4Vectors_0.31.0                          Biobase_2.53.0                           
-## [15] BiocGenerics_0.39.1                       edgeR_3.35.0                             
+## [11] AnnotationDbi_1.55.1                      IRanges_2.27.2                           
+## [13] S4Vectors_0.31.1                          Biobase_2.53.0                           
+## [15] BiocGenerics_0.39.2                       edgeR_3.35.0                             
 ## [17] Glimma_2.3.0                              limma_3.49.4                             
 ## [19] BiocStyle_2.21.3                         
 ## 
@@ -743,7 +741,7 @@ Barcode plot of <code>LIM_MAMMARY_LUMINAL_MATURE_UP</code> (red bars, top of plo
 ##   [1] colorspace_2.0-2            rjson_0.2.20                ellipsis_0.3.2             
 ##   [4] rprojroot_2.0.2             XVector_0.33.0              fs_1.5.0                   
 ##   [7] bit64_4.0.5                 fansi_0.5.0                 xml2_1.3.2                 
-##  [10] R.methodsS3_1.8.1           splines_4.1.0               cachem_1.0.5               
+##  [10] R.methodsS3_1.8.1           splines_4.1.0               cachem_1.0.6               
 ##  [13] geneplotter_1.71.0          knitr_1.33                  jsonlite_1.7.2             
 ##  [16] Rsamtools_2.9.1             annotate_1.71.0             dbplyr_2.1.1               
 ##  [19] R.oo_1.24.0                 png_0.1-7                   graph_1.71.2               
@@ -760,14 +758,14 @@ Barcode plot of <code>LIM_MAMMARY_LUMINAL_MATURE_UP</code> (red bars, top of plo
 ##  [52] parallel_4.1.0              SummarizedExperiment_1.23.1 RBGL_1.69.0                
 ##  [55] yaml_2.2.1                  curl_4.3.2                  memoise_2.0.0              
 ##  [58] ggplot2_3.3.5               biomaRt_2.49.4              stringi_1.7.3              
-##  [61] RSQLite_2.2.7               highr_0.9                   genefilter_1.75.0          
+##  [61] RSQLite_2.2.8               highr_0.9                   genefilter_1.75.1          
 ##  [64] BiocIO_1.3.0                desc_1.3.0                  caTools_1.18.2             
-##  [67] filelock_1.0.2              BiocParallel_1.27.3         rlang_0.4.11               
-##  [70] pkgconfig_2.0.3             systemfonts_1.0.2           matrixStats_0.60.0         
+##  [67] filelock_1.0.2              BiocParallel_1.27.4         rlang_0.4.11               
+##  [70] pkgconfig_2.0.3             systemfonts_1.0.2           matrixStats_0.60.1         
 ##  [73] bitops_1.0-7                evaluate_0.14               lattice_0.20-44            
 ##  [76] purrr_0.3.4                 GenomicAlignments_1.29.0    htmlwidgets_1.5.3          
 ##  [79] bit_4.0.4                   tidyselect_1.1.1            magrittr_2.0.1             
-##  [82] bookdown_0.23               DESeq2_1.33.4               R6_2.5.0                   
+##  [82] bookdown_0.23               DESeq2_1.33.4               R6_2.5.1                   
 ##  [85] generics_0.1.0              DelayedArray_0.19.1         DBI_1.1.1                  
 ##  [88] pillar_1.6.2                survival_3.2-12             KEGGREST_1.33.0            
 ##  [91] RCurl_1.98-1.4              tibble_3.1.3                crayon_1.4.1               
