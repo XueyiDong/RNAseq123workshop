@@ -64,12 +64,10 @@ library(Mus.musculus)
 
 ## 读入计数数据
 
-首先，从[https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&format=file](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&format=file)下载文件*GSE63310_RAW.tar*，并从压缩包中解压出相关的文件。下方的代码将完成此步骤，或者您也可以手动进行这一步并继续后续分析。
+首先，从压缩文件*GSE63310_RAW.tar*中解压出相关的文件。下方的代码将完成此步骤，或者您也可以手动进行这一步并继续后续分析。
 
 ```{r downloadData, eval=TRUE}
-url <- "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&format=file"
-utils::download.file(url, destfile="GSE63310_RAW.tar", mode="wb") 
-utils::untar("GSE63310_RAW.tar", exdir = ".")
+utils::untar(system.file("extdata", "GSE63310_RAW.tar", package = "zhejiang2020"), exdir = ".")
 files <- c("GSM1545535_10_6_5_11.txt", "GSM1545536_9_6_5_11.txt", "GSM1545538_purep53.txt",
   "GSM1545539_JMS8-2.txt", "GSM1545540_JMS8-3.txt", "GSM1545541_JMS8-4.txt",
   "GSM1545542_JMS8-5.txt", "GSM1545544_JMS9-P7c.txt", "GSM1545545_JMS9-P8c.txt")
@@ -262,7 +260,7 @@ boxplot(lcpm, las=2, col=col, main="")
 title(main="B. Example: Normalised data",ylab="Log-cpm")
 ```
 
-## 对样本的无监督聚类
+## 降维
 
 在我们看来，用于检查基因表达分析的最重要的探索性图表之一便是MDS图，或类似的图。这种图表使用无监督聚类方法展示出了样品间的相似性和不相似性，能让我们在进行正式的检验之前对于能检测到多少差异表达基因有个大致概念。理想情况下，样本会在各个实验组内很好的聚类，且我们可以鉴别出远离所属组的样本，并追踪误差或额外方差的来源。如果存在的话，技术重复应当互相非常接近。
 
